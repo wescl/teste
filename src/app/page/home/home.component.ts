@@ -12,6 +12,22 @@ export class HomeComponent implements AfterViewInit {
 
   nome: string = '';
   comentario: string = '';
+  itens = [
+    { nome: 'Angular', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg', mostrar: false },
+    { nome: 'Ionic', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg', mostrar: false },
+    { nome: 'Firebase', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg', mostrar: false },
+    { nome: 'JavaScript', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', mostrar: false },
+    { nome: 'TypeScript', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', mostrar: false },
+    { nome: 'HTML', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', mostrar: false },
+    { nome: 'CSS', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', mostrar: false },
+    { nome: 'PHP', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', mostrar: false },
+    { nome: 'Java', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', mostrar: false },
+    { nome: 'MySQL', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', mostrar: false },
+    { nome: 'GitHub', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', mostrar: false },
+    { nome: 'Python', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', mostrar: false },
+    { nome: 'React', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', mostrar: false },
+    { nome: 'Ruby', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg', mostrar: false },
+  ];
   @ViewChild('secaoAlvo') secaoAlvo!: ElementRef;
 
   constructor(
@@ -47,29 +63,59 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const hiddenElements = document.querySelectorAll('.hidden');
-
-    const myObserver = new IntersectionObserver((entries) => {
+    const hiddenElements = document.querySelectorAll('.hidden-left');
+  
+    const myObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           this.renderer.addClass(entry.target, 'show');
-          this.renderer.removeClass(entry.target, 'hidden');
-          //console.log('Elemento está visível!');
+          this.renderer.removeClass(entry.target, 'hidden-left');
+  
+          // Desconecta o observador após a primeira interseção
+          observer.unobserve(entry.target);
         } else {
-          this.renderer.addClass(entry.target, 'hidden');
+          this.renderer.addClass(entry.target, 'hidden-left');
           this.renderer.removeClass(entry.target, 'show');
-          //console.log('Elemento não está visível!');
         }
       });
     });
-
+  
     hiddenElements.forEach((element) => {
       myObserver.observe(element as HTMLElement);
     });
+  
+    const hiddenElements2 = document.querySelectorAll('.hidden-right');
+  
+    const myObserver2 = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.renderer.addClass(entry.target, 'show');
+          this.renderer.removeClass(entry.target, 'hidden-right');
+  
+          // Desconecta o observador após a primeira interseção
+          observer.unobserve(entry.target);
+        } else {
+          this.renderer.addClass(entry.target, 'hidden-right');
+          this.renderer.removeClass(entry.target, 'show');
+        }
+      });
+    });
+  
+    hiddenElements2.forEach((element) => {
+      myObserver2.observe(element as HTMLElement);
+    });
   }
+  
 
   scrollToSection() {
     this.secaoAlvo.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
-  
+
+  mostrarTexto(item: any) {
+    item.mostrar = true;
+  }
+
+  esconderTexto() {
+    this.itens.forEach(item => (item.mostrar = false));
+  }
 }

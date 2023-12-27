@@ -1,124 +1,89 @@
-<div class="container">
+<!--<div class="fundo"></div> -->
 
+<div class="container">
 
     <div class="header">
         <ul>
+            <li>Projetos</li>
             <li (click)="scrollToSection()">Competências</li>
-            <li>page 2</li>
-            <li>page 3</li>
-            <li>page 4</li>
+            <li>História</li>
+            <li>Contato</li>
         </ul>
     </div>
-
-    <section class="hidden">
-        <div class="persona">
-            <div class="imagem">
-                <img src="https://firebasestorage.googleapis.com/v0/b/portifolio-eeb9f.appspot.com/o/download.png?alt=media&token=1507f6e3-f491-4114-823a-8b6895d8fbba"
-                    alt="">
-            </div>
-            <div class="sobre">
-                <h2 class="nome">Wescley</h2>
-                <h4 class="profissao">Desenvolvedor</h4>
-            </div>
+    <section class="persona">
+        <div class="imagem">
+            <img src="/assets/perfil.png" alt="">
+        </div>
+        <div class="sobre">
+            <span class="nome">WESCLEY ALVES</span>
+            <span class="profissao">DESENVOLVEDOR FULL STACK</span>
         </div>
     </section>
 
-    <div class="linha"></div>
+    <div class="espaco"></div>
 
-    <section class="hidden">
-        <div class="projetos">
-            <h2>Meus projetos</h2>
-            <ul>
-                <li>projeto 1</li>
-                <li>projeto 2</li>
-                <li>projeto 3</li>
-            </ul>
-        </div>
-    </section>
-
-    <div class="linha" #secaoAlvo></div>
-    
-    <section class="hidden">
-        <h3 style="text-align: start; width: 100%; margin-left: 20px;">Competências</h3>
-
+    <section class="hidden-left">
+        <h3 style="text-align: start; width: 100%; margin-left: 20px;">PROJETOS</h3>
         <div class="icons">
-            <div class="hidden">
-                <img class="avatar"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg" />
+            <div class="hidden-right">
+                <img class="projeto" src="/assets/projetos/projeto-ggrid.png" alt="">
+                <span class="nome-projeto">GGrid</span>
             </div>
 
-            <div class="hidden">
-                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg" />
+            <div class="hidden-left">
+                <img class="projeto" src="/assets/projetos/projeto-ggrid.png" alt="">
+                <span class="nome-projeto">GGrid</span>
             </div>
 
-            <div class="hidden">
-                <img class="avatar"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" />
+            <div class="hidden-right">
+                <img class="projeto" src="/assets/projetos/projeto-ggrid.png" alt="">
+                <span class="nome-projeto">GGrid</span>
             </div>
 
-            <div class="hidden">
-                <img class="avatar"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+            <div class="hidden-left">
+                <img class="projeto" src="/assets/projetos/projeto-ggrid.png" alt="">
+                <span class="nome-projeto">GGrid</span>
             </div>
 
-            <div class="hidden">
-                <img class="avatar"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
+            <div class="hidden-right">
+                <img class="projeto" src="/assets/projetos/projeto-ggrid.png" alt="">
+                <span class="nome-projeto">GGrid</span>
             </div>
 
-            <div class="hidden">
-                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+            <div class="hidden-left">
+                <img class="projeto" src="/assets/projetos/projeto-ggrid.png" alt="">
+                <span class="nome-projeto">GGrid</span>
             </div>
-
-            <div class="hidden">
-                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
-            </div>
-
-            <div class="hidden">
-                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" />
-            </div>
-
-            <div class="hidden">
-                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
-            </div>
-
-            <div class="hidden">
-                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
-            </div>
-
-            <div class="hidden">
-                <img class="avatar"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
-            </div>
-
-            <div class="hidden">
-                <img class="avatar"
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
-            </div>
-
-            <div class="hidden">
-                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
-            </div>
-
-            <div class="hidden">
-                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" />
-            </div>
-
         </div>
 
     </section>
 
-    <div class="linha"></div>
+    <div class="espaco"></div>
+    <span #secaoAlvo></span>
 
-    <section class="hidden">
+    <section class="hidden-right">
+        <h3 style="text-align: start; width: 100%; margin-left: 20px;">COMPTÊNCIAS</h3>
+        <div class="icons">
+            <div class="hidden-right" *ngFor="let item of itens" (mouseover)="mostrarTexto(item)"
+                (mouseout)="esconderTexto()">
+                <span *ngIf="item.mostrar" class="nuvem">{{ item.nome }}</span>
+                <img class="avatar" [src]="item.imagem" />
+            </div>
+        </div>
+    </section>
+
+    <div class="espaco"></div>
+
+    <section class="hidden-left">
         <div class="comentario">
             <input [(ngModel)]="nome" placeholder="Seu Nome" />
             <textarea [(ngModel)]="comentario" placeholder="Seu Comentário"></textarea>
             <button (click)="addComentario()">Adicionar Comentário</button>
         </div>
     </section>
+    
+    <div class="espaco"></div>
 
-    <div class="linha"></div>
 </div>
 
 <footer class="footer">
