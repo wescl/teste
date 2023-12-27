@@ -1,0 +1,128 @@
+<div class="container">
+
+
+    <div class="header">
+        <ul>
+            <li (click)="scrollToSection()">Competências</li>
+            <li>page 2</li>
+            <li>page 3</li>
+            <li>page 4</li>
+        </ul>
+    </div>
+
+    <section class="hidden">
+        <div class="persona">
+            <div class="imagem">
+                <img src="https://firebasestorage.googleapis.com/v0/b/portifolio-eeb9f.appspot.com/o/download.png?alt=media&token=1507f6e3-f491-4114-823a-8b6895d8fbba"
+                    alt="">
+            </div>
+            <div class="sobre">
+                <h2 class="nome">Wescley</h2>
+                <h4 class="profissao">Desenvolvedor</h4>
+            </div>
+        </div>
+    </section>
+
+    <div class="linha"></div>
+
+    <section class="hidden">
+        <div class="projetos">
+            <h2>Meus projetos</h2>
+            <ul>
+                <li>projeto 1</li>
+                <li>projeto 2</li>
+                <li>projeto 3</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="linha" #secaoAlvo></div>
+    
+    <section class="hidden">
+        <h3 style="text-align: start; width: 100%; margin-left: 20px;">Competências</h3>
+
+        <div class="icons">
+            <div class="hidden">
+                <img class="avatar"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+            </div>
+
+            <div class="hidden">
+                <img class="avatar" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" />
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="linha"></div>
+
+    <section class="hidden">
+        <div class="comentario">
+            <input [(ngModel)]="nome" placeholder="Seu Nome" />
+            <textarea [(ngModel)]="comentario" placeholder="Seu Comentário"></textarea>
+            <button (click)="addComentario()">Adicionar Comentário</button>
+        </div>
+    </section>
+
+    <div class="linha"></div>
+</div>
+
+<footer class="footer">
+    <ul>
+        <li>rede social 1</li>
+    </ul>
+</footer>
