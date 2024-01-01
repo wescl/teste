@@ -1,0 +1,13 @@
+<div class="habilidades">
+    <div class="titulo">
+        <h3>Habilidades</h3>
+    </div>
+    <p style="margin: 10px;">ㅤ</p>
+    <div class="icons">
+        <div class="hidden-right" *ngFor="let item of itens" (mouseover)="mostrarTexto(item)"
+            (mouseout)="esconderTexto()">
+            <span [@fadeInOut] *ngIf="item.mostrar" class="nuvem">{{ item.nome }}</span>
+            <img class="avatar" [src]="item.imagem" />
+        </div>
+    </div>
+</div>

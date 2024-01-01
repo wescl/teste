@@ -1,0 +1,206 @@
+$outline-width: 4px;
+$shadow-width: 4px;
+$primary-color: #7b00ff;
+$button-background: #7b00ff;
+$sec-button-background: #7b1de0;
+$shadow-color: #570ba9;
+
+.loader {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    width: 29px;
+    height: 29px;
+    margin-top: -14.5px;
+    margin-left: -14.5px;
+    border: 4px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.eightbit-btn {
+    background: $button-background;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-size: 13px;
+    padding: 20px;
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none;
+    color: white;
+    box-shadow: inset (-$shadow-width) (-$shadow-width) 0px 0px $shadow-color;
+    transition: .1s;
+    cursor: pointer;
+    width: 60%;
+    margin: 40px 0;
+
+    &:hover,
+    &:focus {
+        background: $sec-button-background;
+        box-shadow: inset (-$shadow-width*1.5) (-$shadow-width*1.5) 0px 0px $shadow-color;
+    }
+
+    &:active {
+        box-shadow: inset $shadow-width $shadow-width 0px 0px $shadow-color;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: content-box;
+    }
+
+    &:before {
+        top: -$outline-width;
+        left: 0;
+        border-top: $outline-width black solid;
+        border-bottom: $outline-width black solid;
+    }
+
+    &:after {
+        left: -$outline-width;
+        top: 0;
+        border-left: $outline-width black solid;
+        border-right: $outline-width black solid;
+    }
+}
+
+.eightbit {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    padding: 20px 40px;
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none;
+    width: 600px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: content-box;
+        z-index: -1;
+    }
+
+    &:before {
+        top: -$outline-width;
+        left: 0;
+        border-top: $outline-width $button-background solid;
+        border-bottom: $outline-width $shadow-color solid;
+    }
+
+    &:after {
+        left: -$outline-width;
+        top: 0;
+        border-left: $outline-width $button-background solid;
+        border-right: $outline-width $shadow-color solid;
+    }
+
+    h3 {
+        margin: 40px 0 50px 0;
+        color: $primary-color;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-family: 'Press Start 2P', cursive;
+    }
+
+    input {
+        width: 100%;
+        padding: 13px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border: 1px solid #c9c9c9;
+        border-radius: 1px;
+        font-size: 14px;
+        transition: .2s;
+        font-family: 'Roboto', sans-serif;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+            box-shadow: 0px 0px 11px -3px hsla(269, 100%, 50%, 0.186), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+    }
+
+    textarea {
+        width: 100%;
+        max-height: 630px;
+        min-height: 200px;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #c9c9c9;
+        border-radius: 1px;
+        font-size: 14px;
+        resize: vertical;
+        transition: .2s;
+        text-align: justify;
+        font-family: 'Roboto', sans-serif;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+            box-shadow: 0px 0px 11px -3px hsla(269, 100%, 50%, 0.186), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    p {
+        color: $primary-color;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .icon-contato {
+        margin: 30px auto;
+        transition: .2s;
+        width: 100%;
+
+        .teste {}
+
+        i {
+            font-size: 34px;
+            margin: 0 10px;
+            transition: .3s;
+            color: $primary-color;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.erro {
+    width: 1px;
+    height: 1px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(218, 44, 13);
+    text-align: start;
+    padding-right: 71%;
+}
+
+.contador {
+    font-family: 'Roboto', sans-serif;
+    color: $primary-color;
+    opacity: 80%;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

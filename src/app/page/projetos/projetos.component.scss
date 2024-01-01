@@ -1,0 +1,123 @@
+$primary-color: #7b00ff;
+
+.projetos {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    border-top: 3px $primary-color solid;
+    height: 14px;
+    width: 100%;
+
+    h3 {
+        font-family: 'Press Start 2P', cursive;
+        text-align: center;
+        font-size: 20px;
+        background-color: white;
+        padding: 12px 8px;
+        margin-left: 50px;
+        color: $primary-color;
+    }
+}
+
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 888px;
+
+    > div {
+        flex: 0 0 calc(20% - 20px);
+        margin: 20px 2px;
+        text-align: center;
+    }
+}
+
+.avatar,
+.projeto {
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 60px;
+    margin-left: 15px;
+}
+
+.projeto {
+    width: 150px;
+    margin-left: 20px;
+
+    &:hover {
+        box-shadow: 0px 0px 11px -3px hsl(269, 100%, 50%), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.nome-projeto {
+    font-size: 14px;
+    text-align: center;
+    margin-left: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.icons>div:nth-child(2) {
+    transition-delay: 100ms;
+}
+
+.icons>div:nth-child(3) {
+    transition-delay: 200ms;
+}
+
+.icons>div:nth-child(4) {
+    transition-delay: 300ms;
+}
+
+.icons>div:nth-child(5) {
+    transition-delay: 400ms;
+}
+
+.icons>div:nth-child(6) {
+    transition-delay: 500ms;
+}
+
+.icons>div:nth-child(7) {
+    transition-delay: 600ms;
+}
+
+.icons>div:nth-child(8) {
+    transition-delay: 700ms;
+}
+
+.icons>div:nth-child(9) {
+    transition-delay: 800ms;
+}
+
+.icons>div:nth-child(10) {
+    transition-delay: 900ms;
+}
+
+.icons>div:nth-child(11) {
+    transition-delay: 1000ms;
+}
+
+.icons>div:nth-child(12) {
+    transition-delay: 1100ms;
+}
+
+.icons>div:nth-child(13) {
+    transition-delay: 1200ms;
+}
+
+.icons>div:nth-child(14) {
+    transition-delay: 1300ms;
+}

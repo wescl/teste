@@ -1,93 +1,46 @@
-<!--<div class="fundo"></div> -->
-
 <div class="container">
 
     <div class="header">
         <ul>
-            <li>Projetos</li>
-            <li (click)="scrollToSection()">Competências</li>
-            <li>História</li>
+            <i class="fa-solid fa-bars"></i>
+            <li (click)="scrollToProjetos()">Projetos</li>
+            <li (click)="scrollToCompetencias()">Habilidades</li>
+            <li>Sobre</li>
             <li>Contato</li>
         </ul>
     </div>
-    <section class="persona">
-        <div class="imagem">
-            <img src="/assets/perfil.png" alt="">
-        </div>
-        <div class="sobre">
-            <span class="nome">WESCLEY ALVES</span>
-            <span class="profissao">DESENVOLVEDOR FULL STACK</span>
-        </div>
-    </section>
-
-    <div class="espaco"></div>
 
     <section class="hidden-left">
-        <h3 style="text-align: start; width: 100%; margin-left: 20px;">PROJETOS</h3>
-        <div class="icons">
-            <div class="hidden-right">
-                <img class="projeto" src="/assets/projetos/projeto-ggrid.png" alt="">
-                <span class="nome-projeto">GGrid</span>
-            </div>
-
-            <div class="hidden-left">
-                <img class="projeto" src="/assets/projetos/projeto-ggrid.png" alt="">
-                <span class="nome-projeto">GGrid</span>
-            </div>
-
-            <div class="hidden-right">
-                <img class="projeto" src="/assets/projetos/projeto-ggrid.png" alt="">
-                <span class="nome-projeto">GGrid</span>
-            </div>
-
-            <div class="hidden-left">
-                <img class="projeto" src="/assets/projetos/projeto-ggrid.png" alt="">
-                <span class="nome-projeto">GGrid</span>
-            </div>
-
-            <div class="hidden-right">
-                <img class="projeto" src="/assets/projetos/projeto-ggrid.png" alt="">
-                <span class="nome-projeto">GGrid</span>
-            </div>
-
-            <div class="hidden-left">
-                <img class="projeto" src="/assets/projetos/projeto-ggrid.png" alt="">
-                <span class="nome-projeto">GGrid</span>
-            </div>
-        </div>
-
+        <app-perfil></app-perfil>
     </section>
 
     <div class="espaco"></div>
-    <span #secaoAlvo></span>
 
     <section class="hidden-right">
-        <h3 style="text-align: start; width: 100%; margin-left: 20px;">COMPTÊNCIAS</h3>
-        <div class="icons">
-            <div class="hidden-right" *ngFor="let item of itens" (mouseover)="mostrarTexto(item)"
-                (mouseout)="esconderTexto()">
-                <span *ngIf="item.mostrar" class="nuvem">{{ item.nome }}</span>
-                <img class="avatar" [src]="item.imagem" />
-            </div>
-        </div>
+        <app-sobre></app-sobre>
     </section>
 
     <div class="espaco"></div>
 
     <section class="hidden-left">
-        <div class="comentario">
-            <input [(ngModel)]="nome" placeholder="Seu Nome" />
-            <textarea [(ngModel)]="comentario" placeholder="Seu Comentário"></textarea>
-            <button (click)="addComentario()">Adicionar Comentário</button>
-        </div>
+        <app-projetos></app-projetos>
     </section>
-    
+
     <div class="espaco"></div>
+
+    <section class="hidden-right">
+        <app-habilidades></app-habilidades>
+    </section>
+
+    <div class="espaco"></div>
+
+    <section class="hidden-left" style="padding-bottom: 500px;">
+        <app-enviar-mensagem [aviso]="aviso" [texto]="texto" (showToastEvent)="toast($event)"></app-enviar-mensagem>
+    </section>
+
+    <div class="toast" *ngIf="aviso" [@fadeInOut]>
+        {{ texto }}
+    </div>
 
 </div>
 
-<footer class="footer">
-    <ul>
-        <li>rede social 1</li>
-    </ul>
-</footer>

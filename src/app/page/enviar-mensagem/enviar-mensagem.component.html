@@ -1,0 +1,26 @@
+<div class="eightbit">
+
+
+    <h3>Enviar Mensagem</h3>
+
+    <span [@fadeInOut] *ngIf="mensagem === 'nome'" class="erro">Esqueceu esse aqui <i
+            class="fa-solid fa-chevron-down"></i></span>
+    <input maxlength="70" [(ngModel)]="nome" placeholder="Seu nome" />
+
+    <span [@fadeInOut] *ngIf="mensagem === 'mensagem'" class="erro">Esqueceu esse aqui <i
+            class="fa-solid fa-chevron-down"></i></span>
+    <textarea [(ngModel)]="comentario" placeholder="Sua mensagem" maxlength="5000"></textarea>
+    <div class="contador">
+        <span>{{ comentario.length }} / 5000</span>
+    </div>
+    <a (click)="addComentario()" *ngIf="!carregar" class="eightbit-btn">Enviar</a>
+    <a (click)="addComentario()" *ngIf="carregar" class="eightbit-btn">ㅤ<span class="loader"></span>ㅤ</a>
+    <p>ou</p>
+    <div class="icon-contato">
+        <a target="_blank" href="https://wa.me/qr/CZRDQ6OUDU6TL1"><i class="fa-brands fa-whatsapp"></i></a>
+        <a target="_blank" href="mailto:wescleyasr@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/wescley-alves-3a5634296/"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+</div>
+
+

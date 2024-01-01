@@ -1,0 +1,85 @@
+$primary-color: hsl(269, 100%, 50%);
+
+.persona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+
+    .imagem {
+        text-align: center;
+        border-radius: 100%;
+        width: 300px;
+        height:300px;
+        background-color: $primary-color;
+
+        img {
+            border-radius: 100%;
+            box-shadow: 0px 0px 26px -5px hsl(269, 100%, 50%);
+            opacity: 96%;
+            width: 300px;
+            height: auto;
+            transform: rotate(10deg);
+        }
+    }
+
+    .sobre {
+        margin-top: 51px;
+        text-align: center;
+
+        .nome {
+            color: $primary-color;
+            font-size: 35px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .profissao {
+            margin-top: 10px;
+            width: 100%;
+            display: block;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+    }
+}
+
+.sobre>span:nth-child(2) {
+    transition-delay: 100ms;
+}
+.sobre>span:nth-child(3) {
+    transition-delay: 200ms;
+}
+.sobre>span:nth-child(4) {
+    transition-delay: 300ms;
+}
+.sobre>span:nth-child(5) {
+    transition-delay: 400ms;
+}
+.sobre>span:nth-child(6) {
+    transition-delay: 500ms;
+}
+.sobre>span:nth-child(7) {
+    transition-delay: 600ms;
+}
+.sobre>span:nth-child(8) {
+    transition-delay: 700ms;
+}
+.sobre>span:nth-child(9) {
+    transition-delay: 800ms;
+}
+.sobre>span:nth-child(10) {
+    transition-delay: 900ms;
+}
+.sobre>span:nth-child(11) {
+    transition-delay: 1000ms;
+}
+.sobre>span:nth-child(12) {
+    transition-delay: 1100ms;
+}
+.profissao {
+    transition-delay: 1200ms;
+    transform: scale(1.1);
+}
