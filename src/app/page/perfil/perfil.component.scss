@@ -10,7 +10,7 @@ $primary-color: hsl(269, 100%, 50%);
         text-align: center;
         border-radius: 100%;
         width: 300px;
-        height:300px;
+        height: 300px;
         background-color: $primary-color;
 
         img {
@@ -33,53 +33,103 @@ $primary-color: hsl(269, 100%, 50%);
             letter-spacing: 1.5px;
             font-weight: 700;
             text-transform: uppercase;
-        }
-
-        .profissao {
-            margin-top: 10px;
-            width: 100%;
-            display: block;
-            font-weight: 600;
-            font-size: 18px;
+            text-shadow: 2px 2px #000000e5;
         }
 
     }
 }
 
+.profissao {
+    margin-top: 10px;
+    width: 100%;
+    display: block;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
 .sobre>span:nth-child(2) {
     transition-delay: 100ms;
 }
+
 .sobre>span:nth-child(3) {
     transition-delay: 200ms;
 }
+
 .sobre>span:nth-child(4) {
     transition-delay: 300ms;
 }
+
 .sobre>span:nth-child(5) {
     transition-delay: 400ms;
 }
+
 .sobre>span:nth-child(6) {
     transition-delay: 500ms;
 }
+
 .sobre>span:nth-child(7) {
     transition-delay: 600ms;
 }
+
 .sobre>span:nth-child(8) {
     transition-delay: 700ms;
 }
+
 .sobre>span:nth-child(9) {
     transition-delay: 800ms;
 }
+
 .sobre>span:nth-child(10) {
     transition-delay: 900ms;
 }
+
 .sobre>span:nth-child(11) {
     transition-delay: 1000ms;
 }
+
 .sobre>span:nth-child(12) {
     transition-delay: 1100ms;
 }
+
 .profissao {
     transition-delay: 1200ms;
     transform: scale(1.1);
+}
+
+@media only screen and (max-width: 575.98px) {
+
+    .persona {
+
+        .imagem {
+            width: 250px;
+            height: 250px;
+
+            img {
+                width: 250px;
+            }
+        }
+
+        .sobre {
+            margin-top: 45px;
+            text-align: center;
+
+            .nome {
+                font-size: 25px;
+                letter-spacing: 1px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+
+        }
+    }
+
+    .profissao {
+        margin-top: 10px;
+        width: 100%;
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
 }

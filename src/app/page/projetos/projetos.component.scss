@@ -1,16 +1,16 @@
 $primary-color: #7b00ff;
 
 .projetos {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 1500px;
+    width: 100%;
 }
 
 .titulo {
+    margin-bottom: 40px;
     display: flex;
     align-items: center;
     font-family: 'Press Start 2P', cursive;
-    border-top: 3px $primary-color solid;
+    border-top: 2px #7b00ff83 solid;
     height: 14px;
     width: 100%;
 
@@ -29,45 +29,62 @@ $primary-color: #7b00ff;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    width: 888px;
+    width: 100%;
 
-    > div {
-        flex: 0 0 calc(20% - 20px);
-        margin: 20px 2px;
+    >div {
+        flex: 0 0 calc(10% - 20px);
+        margin: 15px;
         text-align: center;
     }
 }
 
-.avatar,
 .projeto {
-    height: auto;
-    border-radius: 10px;
+    height: 280px;
+    border-radius: 5px;
     margin-bottom: 5px;
     transition: .3s;
     cursor: pointer;
+    box-shadow: 0px 0px 26px -5px hsla(269, 100%, 50%, 0.359);
 }
 
-.avatar {
-    width: 60px;
-    margin-left: 15px;
+.check {
+    color: green;
+    font-size: 12px;
 }
 
-.projeto {
-    width: 150px;
-    margin-left: 20px;
+.loading {
+    color: gray;
 
-    &:hover {
-        box-shadow: 0px 0px 11px -3px hsl(269, 100%, 50%), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .fa-spinner {
+        animation: rotate 2s linear infinite;
     }
 }
 
 .nome-projeto {
-    font-size: 14px;
+    font-size: 15px;
     text-align: center;
-    margin-left: 18px;
     font-weight: 700;
     cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    color: $primary-color;
+    text-shadow: .5px .5px #00000053;
+}
+
+.plataforma {
     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
 }
 
 .icons>div:nth-child(2) {
@@ -120,4 +137,48 @@ $primary-color: #7b00ff;
 
 .icons>div:nth-child(14) {
     transition-delay: 1300ms;
+}
+
+@media only screen and (max-width: 575.98px) {
+    .projetos {
+        max-width: 100%;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    .titulo {
+        width: 97%;
+        h3 {
+            font-size: 15px;
+            padding: 8px;
+            margin-left: 10px;
+        }
+    }
+
+    .icons>div {
+        flex: 0 0 calc(30% - 200px);
+        margin: 10px;
+        text-align: center;
+    }
+
+    .projeto {
+        height: 250px;
+        box-shadow: 0px 0px 26px -5px hsla(269, 100%, 50%, 0.254);
+    }
+
+    .nome-projeto {
+        font-size: 12px;
+    }
+
+    .plataforma {
+        font-size: 10px;
+    }
+}
+
+
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+    .titulo {
+        width: 92%;
+        margin: 20px auto;
+    }
 }

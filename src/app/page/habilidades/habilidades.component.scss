@@ -4,9 +4,9 @@ $primary-color: #7b00ff;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    width: 888px;
+    width: 100%;
 
-    > div {
+    >div {
         flex: 0 0 calc(3% - 3px);
         margin: 7px 2px;
         text-align: center;
@@ -14,10 +14,11 @@ $primary-color: #7b00ff;
 }
 
 .titulo {
+    margin-bottom: 40px;
     display: flex;
     align-items: center;
     font-family: 'Press Start 2P', cursive;
-    border-top: 3px $primary-color solid;
+    border-top: 2px #7b00ff83 solid;
     height: 14px;
     width: 100%;
 
@@ -106,4 +107,36 @@ $primary-color: #7b00ff;
 
 .icons>div:nth-child(14) {
     transition-delay: 1300ms;
+}
+
+.icons>div:nth-child(15) {
+    transition-delay: 1400ms;
+}
+
+.icons>div:nth-child(16) {
+    transition-delay: 1500ms;
+}
+
+@media only screen and (max-width: 575.98px) {
+    .titulo {
+        width: 97%;
+        margin-bottom: 10px;
+        h3 {
+            font-size: 15px;
+            padding: 8px;
+            margin-left: 10px;
+        }
+    }
+
+    .avatar{
+        width: 40px;
+    }
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+    .titulo {
+        width: 92%;
+        margin: 20px auto;
+    }
 }

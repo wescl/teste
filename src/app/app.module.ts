@@ -12,9 +12,11 @@ import { PerfilComponent } from './page/perfil/perfil.component';
 import { ProjetosComponent } from './page/projetos/projetos.component';
 import { HabilidadesComponent } from './page/habilidades/habilidades.component';
 import { EnviarMensagemComponent } from './page/enviar-mensagem/enviar-mensagem.component';
-import { CertificadosComponent } from './page/certificados/certificados.component';
 import { SobreComponent } from './page/sobre/sobre.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GgridComponent } from './projetos/ggrid/ggrid.component';
+import { CarrosselComponent } from './carrossel/carrossel.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -24,16 +26,18 @@ import { HttpClientModule } from '@angular/common/http';
     ProjetosComponent,
     HabilidadesComponent,
     EnviarMensagemComponent,
-    CertificadosComponent,
-    SobreComponent
+    SobreComponent,
+    GgridComponent,
+    CarrosselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig), 
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule, BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

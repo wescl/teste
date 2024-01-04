@@ -31,11 +31,50 @@ body {
     opacity: 0;
     filter: blur(3px);
     transform: translateX(-100%);
-    margin-bottom: 50px;
 }
 
 .show {
     opacity: 1;
     filter: blur(0px);
     transform: translateX(0);
+}
+
+@media only screen and (max-width: 575.98px) {
+    .hidden-right {
+        filter: blur(0px);
+        transform: translateX(100%);
+    
+    }
+    
+    .hidden-left {
+        opacity: 0;
+        filter: blur(0px);
+        transform: translateX(-100%);
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+    .hidden-right {
+        filter: blur(0px);
+        transform: translateX(100%);
+    
+    }
+    
+    .hidden-left {
+        opacity: 0;
+        filter: blur(0px);
+        transform: translateX(-100%);
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+
 }

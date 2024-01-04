@@ -5,8 +5,8 @@
 $primary-color: #7b00ff;
 
 .container {
+    max-width: 1137px;
     width: 100%;
-    max-width: 1000px;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
@@ -21,7 +21,11 @@ $primary-color: #7b00ff;
     }
 }
 
-.toast{
+.menu {
+    display: none;
+}
+
+.toast {
     background-color: #12b02a;
     padding: 15px 45px;
     color: white;
@@ -35,7 +39,7 @@ $primary-color: #7b00ff;
 
 .header {
     background-color: white;
-    padding: 15px;
+    padding: 15px 0px;
     color: $primary-color;
     position: fixed;
     top: 0;
@@ -44,18 +48,25 @@ $primary-color: #7b00ff;
     font-family: 'Press Start 2P', cursive;
 
     ul {
-        padding: 0 30px;
         list-style: none;
         display: flex;
         align-items: center;
         text-align: center;
-        width: 95%;
+        width: 100%;
+        padding: 0 15px;
         margin: auto;
     }
+
 
     i {
         margin-right: auto;
         font-size: 20px;
+        transition: .3s;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
     }
 
     li {
@@ -65,7 +76,7 @@ $primary-color: #7b00ff;
         cursor: pointer;
         font-size: 11px;
         letter-spacing: 1.5px;
-        margin-left: 20px;
+        margin-right: 20px;
     }
 
     li:last-child {
@@ -77,10 +88,6 @@ $primary-color: #7b00ff;
     }
 }
 
-.espaco {
-
-}
-
 section {
     display: flex;
     text-align: center;
@@ -89,32 +96,75 @@ section {
     width: 100%;
 }
 
-footer{
+footer {
     height: 100vh;
 }
 
 @media only screen and (max-width: 575.98px) {
-    .container {
-        background-color: red;
+
+    section {
+        height: 80vh;
     }
+
+    .header {
+        padding: 12px 0px;
+
+        li {
+            display: none;
+        }
+
+        .menu {
+            display: block;
+            margin-right: 40px;
+        }
+
+        i {
+            margin-right: auto;
+            font-size: 20px;
+            transition: .3s;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+    }
+
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767.98px) {
-    .container {
-        background-color: blue;
+
+    .header {
+        padding: 12px 0px;
+
+        li {
+            display: none;
+        }
+
+        .menu {
+            display: block;
+            margin-right: 40px;
+        }
+
+        i {
+            margin-right: auto;
+            font-size: 20px;
+            transition: .3s;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-    .container {
-        background-color: pink;
-    }
+    .container {}
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
-    .container {
-        background-color: yellow;
-    }
+    .container {}
 }
 
 @media only screen and (min-width: 1200px) {

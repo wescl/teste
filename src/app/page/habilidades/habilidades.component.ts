@@ -26,6 +26,8 @@ export class HabilidadesComponent {
     { nome: 'TypeScript', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', mostrar: false },
     { nome: 'HTML', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', mostrar: false },
     { nome: 'CSS', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', mostrar: false },
+    { nome: 'Capacitor', imagem: 'https://www.svgrepo.com/show/353536/capacitorjs-icon.svg', mostrar: false },
+    { nome: 'Cordova', imagem: 'https://cdn.icon-icons.com/icons2/2699/PNG/512/apache_cordova_logo_icon_170570.png', mostrar: false },
     { nome: 'PHP', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', mostrar: false },
     { nome: 'Java', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', mostrar: false },
     { nome: 'Python', imagem: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', mostrar: false },

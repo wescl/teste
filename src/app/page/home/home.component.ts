@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, Renderer2, ViewChild, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild, Output, EventEmitter, OnInit } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Service } from 'src/app/model/service.service';
 
@@ -24,58 +24,29 @@ export class HomeComponent implements AfterViewInit, OnInit {
   @Output() scrollEvent = new EventEmitter<void>();
   aviso: boolean = false;
   texto: string = "";
-
+ 
   constructor(
-    private renderer: Renderer2,
-    private service: Service
+    private service: Service,
+    private elementRef: ElementRef,
   ) { }
 
   ngOnInit(): void {
     this.getIpAddress();
+    //this.scrollTop();
   }
 
   ngAfterViewInit() {
-    const hiddenElements = document.querySelectorAll('.hidden-left');
+    const hiddenElementsLeft = this.elementRef.nativeElement.querySelectorAll('.hidden-left');
+    const hiddenElementsRight = this.elementRef.nativeElement.querySelectorAll('.hidden-right');
 
-    const myObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.renderer.addClass(entry.target, 'show');
-          this.renderer.removeClass(entry.target, 'hidden-left');
-          //observer.unobserve(entry.target);
-        } else {
-          this.renderer.addClass(entry.target, 'hidden-left');
-          this.renderer.removeClass(entry.target, 'show');
-        }
-      });
-    });
-
-    hiddenElements.forEach((element) => {
-      myObserver.observe(element as HTMLElement);
-    });
-
-    const hiddenElements2 = document.querySelectorAll('.hidden-right');
-
-    const myObserver2 = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.renderer.addClass(entry.target, 'show');
-          this.renderer.removeClass(entry.target, 'hidden-right');
-          //observer.unobserve(entry.target);
-        } else {
-          this.renderer.addClass(entry.target, 'hidden-right');
-          this.renderer.removeClass(entry.target, 'show');
-        }
-      });
-    });
-
-    hiddenElements2.forEach((element) => {
-      myObserver2.observe(element as HTMLElement);
-    });
+    this.service.observeIntersection(hiddenElementsLeft, 'show', 'hidden-left');
+    this.service.observeIntersection(hiddenElementsRight, 'show', 'hidden-right');
   }
 
   @ViewChild('competencias') competencias!: ElementRef;
   @ViewChild('projetos') projetos!: ElementRef;
+  @ViewChild('sobre') sobre!: ElementRef;
+  @ViewChild('contato') contato!: ElementRef;
 
   scrollToCompetencias() {
     this.competencias.nativeElement.scrollIntoView({ behavior: 'smooth' });
@@ -85,8 +56,16 @@ export class HomeComponent implements AfterViewInit, OnInit {
     this.projetos.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 
-  scrollToMensagem() {
-    this.scrollEvent.emit();
+  scrollToSobre(){
+    this.sobre.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  scrollToContato(){
+    this.contato.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  scrollTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   async toast(texto: string) {
@@ -105,5 +84,5 @@ export class HomeComponent implements AfterViewInit, OnInit {
       this.service.adicionarIp(data.ip, data.city, data.region, data.country_name)
     });
   }
-
+  
 }

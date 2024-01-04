@@ -2,38 +2,49 @@
 
     <div class="header">
         <ul>
-            <i class="fa-solid fa-bars"></i>
+            <i (click)="scrollTop()" class="fa-solid fa-house"></i>
+            <i mat-button [matMenuTriggerFor]="menu" class="fa-solid fa-bars menu"></i>
+            <li (click)="scrollToSobre()">Sobre</li>
             <li (click)="scrollToProjetos()">Projetos</li>
-            <li (click)="scrollToCompetencias()">Habilidades</li>
-            <li>Sobre</li>
-            <li>Contato</li>
+            <li (click)="scrollToCompetencias()">Conhecimentos</li>
+            <li (click)="scrollToContato()">Contato</li>
+            <li>ㅤ</li>
         </ul>
     </div>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item style="color: #7b00ff; text-transform: uppercase; font-weight: 500;"
+            (click)="scrollToSobre()">Sobre</button>
+        <button mat-menu-item style="color: #7b00ff; text-transform: uppercase; font-weight: 500;"
+            (click)="scrollToProjetos()">Projetos</button>
+        <button mat-menu-item style="color: #7b00ff; text-transform: uppercase; font-weight: 500;"
+            (click)="scrollToCompetencias()">Conhecimentos</button>
+        <button mat-menu-item style="color: #7b00ff; text-transform: uppercase; font-weight: 500;"
+            (click)="scrollToContato()">Contato</button>
+    </mat-menu>
+
+    <div style="margin: 100px;"></div>
 
     <section class="hidden-left">
         <app-perfil></app-perfil>
     </section>
 
-    <div class="espaco"></div>
-
+    <div style="padding: 100px;" #sobre></div>
     <section class="hidden-right">
         <app-sobre></app-sobre>
     </section>
 
-    <div class="espaco"></div>
-
+    <div style="padding: 100px;" #projetos></div>
     <section class="hidden-left">
         <app-projetos></app-projetos>
     </section>
 
-    <div class="espaco"></div>
-
+    <div style="padding: 100px;" #competencias></div>
     <section class="hidden-right">
         <app-habilidades></app-habilidades>
     </section>
 
-    <div class="espaco"></div>
-
+    <div style="padding: 60px;" #contato></div>
     <section class="hidden-left" style="padding-bottom: 500px;">
         <app-enviar-mensagem [aviso]="aviso" [texto]="texto" (showToastEvent)="toast($event)"></app-enviar-mensagem>
     </section>
@@ -43,4 +54,3 @@
     </div>
 
 </div>
-
