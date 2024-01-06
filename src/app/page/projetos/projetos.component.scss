@@ -129,6 +129,18 @@ $primary-color: #7b00ff;
                 font-weight: 500;
                 letter-spacing: 2px;
             }
+
+            &:hover {
+                cursor: pointer;
+    
+                img {
+                    transform: none;
+                }
+            }
+
+            img{
+                transform: none;
+            }
         }
     }
 }

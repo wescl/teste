@@ -103,7 +103,8 @@ $primary-color: #7b00ff;
 section {
     display: flex;
     text-align: center;
-    align-items: start;
+    align-items: flex-start;
+
     height: 100vh;
     width: 100%;
 }
