@@ -1,47 +1,44 @@
 <div class="titulo">
-    <h3>Sobre mim</h3>
+    <div>
+        <h3>Sobre Mim</h3>
+    </div>
 </div>
-<p style="margin: 10px;">ㅤ</p>
+
 <div class="row">
     <div class="col hidden-left" style="transition-delay: 500ms;">
         <div class="expansion-panel">
             <div class="panel-header" (click)="togglePanel('panel1')">
-                <h3>Quem sou eu</h3>
+                <h3>Quem Sou Eu</h3>
                 <div class="icon" #icon1>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
             </div>
             <div class="panel-content" [ngClass]="{'open': isPanelOpen['panel1']}">
-                <p>Eu sou Wescley, tenho 20 anos e tenho uma relação de amor e um pouco de <span
-                        style="color: red; font-size: 18px;"><strong>RAIVA</strong></span> com a programação. Sempre
-                    tive um
-                    interesse especial em construir coisas, desmontar dispositivos que não funcionam mais e explorar as
-                    possibilidades de cada peça. Com a programação, mergulho em um amplo universo de possibilidades que
-                    adoro explorar. Graças a programação, consigo olhar para diversas situações e pensar em maneiras de
-                    facilitar ou ajudar. Meus
-                    projetos no portfólio exemplificam esse pensamento, e abaixo, você pode encontrar eles.</p>
+                <p>Olá, eu sou Wescley, um entusiasta de 20 anos com uma paixão profunda e, às vezes, uma pitada de <span
+                        style="color: red; font-size: 18px;"><strong>RAIVA</strong></span> pela programação. Desde cedo,
+                    sempre fui fascinado por construir coisas, desmontar dispositivos e explorar as possibilidades de
+                    cada peça. Com a programação, mergulhei em um vasto universo de criatividade que adoro explorar. Meus
+                    projetos no portfólio são um reflexo desse pensamento, e abaixo você pode conhecê-los melhor.</p>
             </div>
         </div>
     </div>
     <div class="col hidden-right">
         <div class="expansion-panel">
             <div class="panel-header" (click)="togglePanel('panel2')">
-                <h3>o começo</h3>
+                <h3>O Começo</h3>
                 <div class="icon" #icon2>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
             </div>
             <div class="panel-content" [ngClass]="{'open': isPanelOpen['panel2']}">
-                <p>Conheci a programação graças a um técnico da minha provedora de internet. Ele veio resolver um
-                    problema exatamente no dia em que eu estava montando meu primeiro PC. Ele gentilmente me ajudou, e
-                    ao conhecê-lo melhor, descobri que ele estudava na área. Ele me mostrou o que fazia através da
-                    inspeção do navegador, simplesmente alterando a cor de um elemento, e eu já me interessei. Em 2021,
-                    iniciei meus estudos com o renomado Gustavo Guanabara. Tive que fazer uma pausa temporária devido ao
-                    trabalho, mas em 2022, me matriculei em um curso técnico em informática no <a target="_blank"
-                        href="https://tisenac.netlify.app/#dt27">Senac</a>. Aprofundei-me ainda mais no assunto, tive a
-                    felicidade de aprender muitas coisas, participei do desenvolvimento de projetos em grupo e continuo
-                    me dedicando aos estudos até hoje.</p>
-
+                <p>Minha jornada na programação começou graças a um técnico da minha provedora de internet. Ele veio
+                    resolver um problema exatamente no dia em que eu estava montando meu primeiro PC. Gentilmente, ele
+                    compartilhou um pouco do que fazia, simplesmente alterando a cor de um elemento através da inspeção
+                    do navegador, e meu interesse foi imediatamente despertado. Em 2021, iniciei meus estudos com o
+                    renomado Gustavo Guanabara. Apesar de uma pausa temporária devido ao trabalho, retomei em 2022 com
+                    um curso técnico em informática no <a target="_blank"
+                        href="https://tisenac.netlify.app/#dt27">Senac</a>. Essa jornada me proporcionou aprendizados
+                    significativos, participação em projetos em grupo e uma dedicação contínua aos estudos.</p>
             </div>
         </div>
     </div>

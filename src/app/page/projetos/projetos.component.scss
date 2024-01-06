@@ -1,184 +1,143 @@
 $primary-color: #7b00ff;
 
 .projetos {
-    max-width: 1500px;
-    width: 100%;
-}
-
-.titulo {
-    margin-bottom: 40px;
-    display: flex;
-    align-items: center;
-    font-family: 'Press Start 2P', cursive;
-    border-top: 2px #7b00ff83 solid;
-    height: 14px;
-    width: 100%;
-
-    h3 {
-        font-family: 'Press Start 2P', cursive;
-        text-align: center;
-        font-size: 20px;
-        background-color: white;
-        padding: 12px 8px;
-        margin-left: 50px;
-        color: $primary-color;
-    }
-}
-
-.icons {
     display: flex;
     flex-wrap: wrap;
-    margin: auto;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 1100px;
 
-    >div {
-        flex: 0 0 calc(10% - 20px);
-        margin: 15px;
+    //background-color: red;
+
+    .projeto {
         text-align: center;
-    }
-}
+        border-radius: 9px;
+        max-width: 200px;
+        transition: all 1s;
+        padding: 20px;
+        margin: 10px 15px;
+        background-color: #f5f5f5a1;
+        //background-color: green;
+        border: 1px solid rgba(0, 0, 0, 0.045);
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-.projeto {
-    height: 280px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    transition: .3s;
-    cursor: pointer;
-    box-shadow: 0px 0px 26px -5px hsla(269, 100%, 50%, 0.359);
-}
+        &:hover {
+            cursor: pointer;
 
-.check {
-    color: green;
-    font-size: 12px;
-}
-
-.loading {
-    color: gray;
-
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg);
+            img {
+                transform: scale(1.1);
+            }
         }
 
-        to {
-            transform: rotate(360deg);
+        img {
+            width: 80%;
+            max-width: 170px;
+            border-radius: 5%;
+            margin-bottom: 10px;
+            transition: all .6s;
+        }
+
+        .nome-projeto {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            display: block;
+            margin-bottom: 10px;
+            align-items: center;
+            text-transform: uppercase;
+        }
+
+        .status-concluido {
+            color: green;
+            font-size: 12px;
+
+            i {
+                font-size: 14px;
+            }
+        }
+
+        .status-andamento {
+            color: gray;
+            font-size: 12px;
+
+            .fa-spinner {
+                animation: rotate 2s linear infinite;
+                padding: 0px;
+            }
         }
     }
+}
 
-    .fa-spinner {
-        animation: rotate 2s linear infinite;
+.aviso {
+    margin: 40px auto;
+    margin-top: 20px;
+
+    transition-delay: 1000ms;
+
+    span {}
+
+    i {
+        color: rgb(245, 93, 34);
     }
 }
 
-.nome-projeto {
-    font-size: 15px;
-    text-align: center;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: 'Press Start 2P', cursive;
-    color: $primary-color;
-    text-shadow: .5px .5px #00000053;
-}
-
-.plataforma {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-.icons>div:nth-child(2) {
-    transition-delay: 100ms;
-}
-
-.icons>div:nth-child(3) {
-    transition-delay: 200ms;
-}
-
-.icons>div:nth-child(4) {
-    transition-delay: 300ms;
-}
-
-.icons>div:nth-child(5) {
+.projetos>div:nth-child(1) {
     transition-delay: 400ms;
 }
 
-.icons>div:nth-child(6) {
-    transition-delay: 500ms;
-}
-
-.icons>div:nth-child(7) {
-    transition-delay: 600ms;
-}
-
-.icons>div:nth-child(8) {
+.projetos>div:nth-child(2) {
     transition-delay: 700ms;
 }
 
-.icons>div:nth-child(9) {
-    transition-delay: 800ms;
-}
-
-.icons>div:nth-child(10) {
-    transition-delay: 900ms;
-}
-
-.icons>div:nth-child(11) {
+.projetos>div:nth-child(3) {
     transition-delay: 1000ms;
 }
 
-.icons>div:nth-child(12) {
-    transition-delay: 1100ms;
-}
 
-.icons>div:nth-child(13) {
-    transition-delay: 1200ms;
-}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
 
-.icons>div:nth-child(14) {
-    transition-delay: 1300ms;
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @media only screen and (max-width: 575.98px) {
     .projetos {
-        max-width: 100%;
-        padding: 0 10px;
-        margin: 0 auto;
-    }
+        display: contents;
+        transition: all .7s;
 
-    .titulo {
-        width: 97%;
-        h3 {
-            font-size: 15px;
-            padding: 8px;
-            margin-left: 10px;
+        .projeto {
+            max-width: 60%;
+            margin: 10px auto;
+            transition: all .7s;
+
+            img {
+                width: 70%;
+                max-width: 160px;
+                border-radius: 5%;
+                margin-bottom: 10px;
+                transition: all .6s;
+                transition: all .7s;
+
+            }
+
+            .nome-projeto {
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 2px;
+            }
         }
-    }
-
-    .icons>div {
-        flex: 0 0 calc(30% - 200px);
-        margin: 10px;
-        text-align: center;
-    }
-
-    .projeto {
-        height: 250px;
-        box-shadow: 0px 0px 26px -5px hsla(269, 100%, 50%, 0.254);
-    }
-
-    .nome-projeto {
-        font-size: 12px;
-    }
-
-    .plataforma {
-        font-size: 10px;
     }
 }
 
-
 @media only screen and (min-width: 576px) and (max-width: 767.98px) {
-    .titulo {
-        width: 92%;
-        margin: 20px auto;
+    .projetos {
+        .projeto {
+            max-width: 48%;
+            /* Duas colunas */
+        }
     }
 }

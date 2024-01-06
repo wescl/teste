@@ -79,7 +79,6 @@ $shadow-color: #570ba9;
     font-family: 'Press Start 2P', cursive;
     text-decoration: none;
     width: 600px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     transition: 1s;
 
     &:before,
@@ -216,9 +215,9 @@ $shadow-color: #570ba9;
 @media only screen and (max-width: 575.98px) {
 
     .eightbit {
-        width: 360px;
+        width: 320px;
         transition: 1s;
-        padding: 10px;
+        padding: 15px;
 
         h3 {
             font-size: 12px;
@@ -229,6 +228,11 @@ $shadow-color: #570ba9;
             width: 100%;
             max-height: 430px;
             min-height: 100px;
+            padding: 8px;
+        }
+
+        input{
+            padding: 9px;
         }
 
         p {

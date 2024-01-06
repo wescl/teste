@@ -1,172 +1,87 @@
 $primary-color: #7b00ff;
 
-.titulo {
-    margin-bottom: 40px;
-    display: flex;
-    align-items: center;
-    font-family: 'Press Start 2P', cursive;
-    border-top: 3px $primary-color solid;
-    height: 14px;
-    width: 100%;
-
-    h3 {
-        font-family: 'Press Start 2P', cursive;
-        text-align: center;
-        font-size: 20px;
-        background-color: white;
-        padding: 12px 8px;
-        margin-left: 50px;
-        color: $primary-color;
-    }
-}
-
 .row {
     display: flex;
-    flex-wrap: wrap;
-}
 
-.col {
-    flex: 1;
-    margin: 0 10px;
-}
+    .col {
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+    }
 
-.expansion-panel {
-    border-radius: 4px;
-    width: 100%;
-    overflow: hidden;
-    padding: 10px 15px;
+    .expansion-panel {
+        margin: auto;
+        overflow: hidden;
+        transition: height 1s ease-in-out;
+        width: 85%;
 
-    .panel-header {
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 400px;
-        background-color: none;
-        padding: 8px 25px;
-        border-radius: 3px;
-        border-bottom: 1.5px solid #7b00ff57;
-    
-        h3 {
-            color: $primary-color;
-            margin: 0;
-            font-size: 15px;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
+        .panel-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            align-items: center;
+            border-bottom: 2px solid #7b00ff8c;
+            border-radius: 2px;
 
-        .icon {
-            transition: transform 0.7s ease;
-
-            i{
+            h3 {
+                margin: 0;
+                text-transform: uppercase;
+                font-size: 14px;
                 color: $primary-color;
+                font-weight: 500;
+                letter-spacing: 3px;
+            }
+
+            .icon {
+                i {
+                    transition: transform 0.7s ease-in-out;
+                    color: $primary-color;
+                }
+
+                &.open {
+                    i {
+                        transform: rotate(180deg);
+                    }
+                }
             }
         }
 
-        .icon.open {
-            transform: rotate(180deg);
-        }
+        .panel-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .6s ease-in-out;
 
-    }
+            &.open {
+                max-height: 1000px;
+            }
 
-    .panel-content {
-        max-width: 400px;
-        padding: 0 10px;
-        overflow: hidden;
-        max-height: 0;
-        text-align: justify;
-        transition: .5s;
-        margin: 20px auto;
-    }
-
-    .open {
-        max-height: 800px;
-        transition: 1s;
-    }
-
-    @media (max-width: 768px) {
-        .col {
-            flex: 100%;
+            p {
+                margin: 0;
+                padding: 20px;
+                text-align: justify;
+            }
         }
     }
-}
-
-.row>col:nth-child(2) {
-    transition-delay: 600ms;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767.98px) {
-    .titulo {
-        width: 92%;
-        margin: 20px auto;
-    }
 
-    .expansion-panel {
-        border-radius: 3px;
-        width: 90%;
-        text-align: center;
-        margin: 0 auto;
-
-        .panel-header {
-            width: 100%;
-            text-align: center;
-            margin: 0 auto;
-
-            .icon {
-                transition: transform 0.7s ease;
-
-                i {
-                    color: $primary-color;
-                }
-            }
-
-            .icon.open {
-                transform: rotate(180deg);
-            }
-
-        }
-
-        .panel-content {
-            width: 400px;
-            padding: 0 10px;
-            margin: 15px auto;
-        }
-    }
 }
 
 @media only screen and (max-width: 575.98px) {
-    .titulo {
-        width: 97%;
-        h3 {
-            font-size: 15px;
-            padding: 8px;
-            margin-left: 10px;
-        }
+
+    .row {
+        display: block;
     }
 
-    .col{
-        display: flex;
-        width: 300px;
-        padding: 20px;
+    .col {
+        margin-top: 30px;
     }
 
-    .expansion-panel {
-        max-width: 400px;
-        width: 100%;
-        min-width: 200px;
-
-        .panel-header {
-            margin: 1px 1px;
-        }
-
-        .panel-content {
-            margin: 1px 1px;
-            padding-top: 20px;
-        }
-
-        .open {
-            margin: 1px 1px;
-        }
+    p {
+        margin: 0;
+        padding: 7px;
+        text-align: justify;
     }
-
 }

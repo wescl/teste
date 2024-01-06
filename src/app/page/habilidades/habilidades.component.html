@@ -1,13 +1,10 @@
-<div class="habilidades">
-    <div class="titulo">
-        <h3>Conhecimentos</h3>
-    </div>
-    <p style="margin: 10px;">ㅤ</p>
-    <div class="icons">
-        <div class="hidden-right" *ngFor="let item of itens" (mouseover)="mostrarTexto(item)"
-            (mouseout)="esconderTexto()">
-            <span [@fadeInOut] *ngIf="item.mostrar" class="nuvem">{{ item.nome }}</span>
-            <img class="avatar" [src]="item.imagem" />
-        </div>
+<div class="titulo">
+    <h3>Conhecimentos</h3>
+</div>
+
+<div class="item-container">
+    <div *ngFor="let item of itens" class="item hidden-right" (mouseenter)="mostrarTexto(item)" (mouseleave)="esconderTexto()">
+        <img [src]="item.imagem" alt="{{ item.nome }}">
+        <span [@fadeInOut] *ngIf="item.mostrar">{{ item.nome }}</span>
     </div>
 </div>

@@ -15,7 +15,6 @@ body {
 .hidden-left,
 .hidden-right,
 .show {
-
     justify-content: center;
     transition: all 1s;
 }
@@ -24,7 +23,6 @@ body {
     opacity: 0;
     filter: blur(3px);
     transform: translateX(100%);
-
 }
 
 .hidden-left {
@@ -39,17 +37,42 @@ body {
     transform: translateX(0);
 }
 
+.titulo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+
+    h3 {
+        color: #7b00ff;
+        font-family: 'Press Start 2P', cursive;
+        text-transform: uppercase;
+        text-shadow: .2px .2px .2px #000000;
+        font-size: 25px;
+        letter-spacing: 4px;
+    }
+}
+
+
+
 @media only screen and (max-width: 575.98px) {
     .hidden-right {
         filter: blur(0px);
         transform: translateX(100%);
-    
     }
-    
+
     .hidden-left {
         opacity: 0;
         filter: blur(0px);
         transform: translateX(-100%);
+    }
+
+    .titulo {
+        margin-bottom: 60px;
+    
+        h3 {
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
     }
 }
 
@@ -57,24 +80,27 @@ body {
     .hidden-right {
         filter: blur(0px);
         transform: translateX(100%);
-    
+
     }
-    
+
     .hidden-left {
         opacity: 0;
         filter: blur(0px);
         transform: translateX(-100%);
     }
+
+    .titulo {
+        margin-bottom: 60px;
+    
+        h3 {
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+    }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {}
 
-}
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {}
 
-@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
-
-}
-
-@media only screen and (min-width: 1200px) {
-
-}
+@media only screen and (min-width: 1200px) {}

@@ -16,7 +16,7 @@ export class SobreComponent implements OnInit {
 
   isPanelOpen: PanelStatus = {
     panel1: false,
-    panel2: true
+    panel2: false
   };
 
   constructor(private renderer: Renderer2) { }

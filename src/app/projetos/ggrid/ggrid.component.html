@@ -4,7 +4,7 @@
         <i mat-button [matMenuTriggerFor]="menu" class="fa-solid fa-bars menu"></i>
         <li (click)="scrollTop()">baixar</li>
         <li (click)="scrollToMotivo()">motivo</li>
-        <li (click)="scrollToVideo()">video</li>
+        <!-- <li (click)="scrollToVideo()">video</li> -->
         <li (click)="scrollToPaginas()">paginas</li>
     </ul>
 </div>
@@ -39,9 +39,10 @@
                 </p>
 
                 <h3>Baixar Apk</h3>
-                <a class="eightbit-btn"
-                    href="https://store9.gofile.io/download/4e388e07-bd51-4ebc-b1a1-cab52b269454/GGrid.apk" download>
-                    Direto
+                <a class="eightbit-btn" target="_blank"
+                    href="https://www.mediafire.com/file/bqierxfa1wwcaf8/GGrid.apk"
+                    download>
+                    Mediafire
                 </a>
                 <a class="eightbit-btn" target="_blank"
                     href="https://drive.usercontent.google.com/download?id=1B32t3GoXRCG-rDebj1dY67Bz01TakbCI&export=download&authuser=0&confirm=t&uuid=b1edebd6-8cb6-4604-a30f-658ca3353d39&at=APZUnTVsPzh17_BEuw0Al7I0AFRW%3A1704204195351"
@@ -49,7 +50,7 @@
                     Drive
                 </a>
             </div>
-            <div class="col carrossel">
+            <div class="col carrossel hidden-right" style="transition-delay: 400ms;">
                 <app-carrossel [imagens]="[
                   'https://firebasestorage.googleapis.com/v0/b/portifolio-eeb9f.appspot.com/o/projeto%2Flogo.png?alt=media&token=1d340515-8cb7-401a-b435-dc6a1dcf7607',
                   'https://firebasestorage.googleapis.com/v0/b/portifolio-eeb9f.appspot.com/o/projeto%2Flogin.png?alt=media&token=8c9cc3d8-3734-4d52-8113-5e9b19ffd42c',
@@ -63,7 +64,7 @@
         <p style="margin: 50px;" #motivo></p>
     </section>
 
-    <section class="hidden-right carrosel-z">
+    <section class="hidden-left carrosel-z">
         <div class="row">
             <div class="col">
                 <app-carrossel [imagens]="[
@@ -78,7 +79,7 @@
         </div>
     </section>
 
-    <section class="hidden-right">
+    <section class="hidden-left">
         <div class="row">
             <div class="col info">
                 <h1>Motivo da criação</h1>
@@ -106,7 +107,7 @@
             </div>
         </div>
     </section>
-    <p style="margin: 100px;" #video>ㅤ</p>
+    <!-- <p style="margin: 100px;" #video>ㅤ</p>
     <section class="hidden-left">
         <div class="row">
             <div class="col info">
@@ -119,7 +120,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <p style="margin: 10px;" #paginas>ㅤ</p>
     <section class="hidden-right" style="display: flex; align-items: center;">
         <div class="row">

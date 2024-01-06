@@ -1,5 +1,7 @@
 <div class="container">
+<div class="teste">
 
+</div>
     <div class="header">
         <ul>
             <i (click)="scrollTop()" class="fa-solid fa-house"></i>
@@ -24,13 +26,12 @@
     </mat-menu>
 
     <div style="margin: 100px;"></div>
-
-    <section class="hidden-left">
+    <section class="hidden-left white">
         <app-perfil></app-perfil>
     </section>
 
     <div style="padding: 100px;" #sobre></div>
-    <section class="hidden-right">
+    <section class="hidden-right gray">
         <app-sobre></app-sobre>
     </section>
 
@@ -40,7 +41,7 @@
     </section>
 
     <div style="padding: 100px;" #competencias></div>
-    <section class="hidden-right">
+    <section class="hidden-right gray">
         <app-habilidades></app-habilidades>
     </section>
 
@@ -52,5 +53,4 @@
     <div class="toast" *ngIf="aviso" [@fadeInOut]>
         {{ texto }}
     </div>
-
 </div>
