@@ -39,6 +39,7 @@ export class HabilidadesComponent {
     { nome: 'MongoDB', imagem: 'https://www.svgrepo.com/show/331488/mongodb.svg', mostrar: false },
     { nome: 'Laravel', imagem: 'https://static-00.iconduck.com/assets.00/laravel-icon-497x512-uwybstke.png', mostrar: false },
     { nome: 'Vue', imagem: 'https://static-00.iconduck.com/assets.00/vue-icon-2048x1766-ntogpmti.png', mostrar: false },
+    { nome: 'Sass', imagem: 'https://cdn-icons-png.flaticon.com/512/5968/5968358.png', mostrar: false },
     { nome: 'Svelte', imagem: 'https://raw.githubusercontent.com/sveltejs/svelte/29052aba7d0b78316d3a52aef1d7ddd54fe6ca84/site/static/images/svelte-android-chrome-512.png', mostrar: false },
     { nome: 'Bootstrap', imagem: 'https://camo.githubusercontent.com/b872b9ada0c2c3d373bbb0c356eb4af353127335fc3d2e611964433864ab4de1/68747470733a2f2f676574626f6f7473747261702e636f6d2f646f63732f352e322f6173736574732f6272616e642f626f6f7473747261702d6c6f676f2d736861646f772e706e67', mostrar: false },
   ];

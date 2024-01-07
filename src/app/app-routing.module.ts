@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './page/home/home.component';
-import { GgridComponent } from './projetos/ggrid/ggrid.component';
+import { GgridComponent } from './projeto/ggrid/ggrid.component';
 
 const routes: Routes = [
   {

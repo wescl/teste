@@ -63,10 +63,6 @@ $shadow-color: #570ba9;
     }
 }
 
-.carrosel-z {
-    display: none;
-}
-
 .menu {
     display: none;
 }
@@ -76,7 +72,7 @@ section {
 }
 
 .container {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     padding: 40px;
     overflow: hidden;
@@ -271,19 +267,7 @@ section {
     .container {
         width: 100%;
         margin: 0 auto;
-        padding: 20px;
-    }
-
-    .carrossel {
-        display: none;
-    }
-
-    .carrosel-z {
-        display: block;
-    }
-
-    section {
-        height: 100vh;
+        padding: 5px;
     }
 
     .header {
@@ -308,10 +292,6 @@ section {
                 transform: scale(1.1);
             }
         }
-    }
-
-    .container {
-        padding: 10px;
     }
 
     .info {
@@ -353,20 +333,52 @@ section {
             }
         }
     }
+
+
+    .container {
+        padding: 20px;
+    }
+
+    .title {
+        margin-top: 10px;
+        width: 100px;
+
+
+        h1 {
+            font-size: 28px;
+            margin: 0;
+            text-shadow: 1px 1px #000000e5;
+
+        }
+
+        h2 {
+            font-size: 11px;
+            margin: 0 auto;
+            margin-left: 8px;
+        }
+
+        h3 {
+            font-size: 13px;
+        }
+
+        p {
+            padding: 5px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    .col {
+        flex: content;
+    }
+
+    .espacinho {
+        padding: 100px;
+    }
+
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767.98px) {
-    .carrossel {
-        display: none;
-    }
-
-    .carrosel-z {
-        display: block;
-    }
-
-    section {
-        height: 100vh;
-    }
 
     .header {
         padding: 12px 0px;
@@ -394,7 +406,42 @@ section {
 
     .container {
         padding: 10px;
+        width: 100%;
     }
+
+    .row {}
+
+    .title {
+        margin-top: 80px;
+        width: 100px;
+
+        h1 {
+            font-size: 30px;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 11px;
+            margin: 0 auto;
+            margin-left: 8px;
+        }
+
+        h3 {
+            font-size: 13px;
+        }
+
+        p {
+            padding: 5px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    .col {
+        padding: none;
+    }
+
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {

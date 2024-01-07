@@ -14,9 +14,9 @@ import { HabilidadesComponent } from './page/habilidades/habilidades.component';
 import { EnviarMensagemComponent } from './page/enviar-mensagem/enviar-mensagem.component';
 import { SobreComponent } from './page/sobre/sobre.component';
 import { HttpClientModule } from '@angular/common/http';
-import { GgridComponent } from './projetos/ggrid/ggrid.component';
 import { CarrosselComponent } from './carrossel/carrossel.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { GgridComponent } from './projeto/ggrid/ggrid.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +27,8 @@ import { MatMenuModule } from '@angular/material/menu';
     HabilidadesComponent,
     EnviarMensagemComponent,
     SobreComponent,
+    CarrosselComponent,
     GgridComponent,
-    CarrosselComponent
   ],
   imports: [
     BrowserModule,
