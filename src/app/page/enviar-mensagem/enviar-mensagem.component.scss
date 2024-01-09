@@ -1,5 +1,5 @@
-$outline-width: 4px;
-$shadow-width: 4px;
+$outline-width: 5px;
+$shadow-width: 5px;
 $primary-color: #7b00ff;
 $button-background: #7b00ff;
 $sec-button-background: #7b1de0;
@@ -181,12 +181,16 @@ $shadow-color: #570ba9;
 }
 
 .erro {
-    width: 1px;
-    height: 1px;
+    display: flex;
+    text-align: start;
+    align-items: center;
+
     font-family: 'Roboto', sans-serif;
     color: rgb(218, 44, 13);
-    text-align: start;
-    padding-right: 71%;
+
+    i {
+        margin-left: 10px;
+    }
 }
 
 .contador {

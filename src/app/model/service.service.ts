@@ -34,7 +34,7 @@ export class Service {
     return this.ipAtual;
   }
 
-  adicionarIp(ip: string, city: string, regiao: string, country: string, idioma: string) {
+  adicionarIp(ip: string, city: string, regiao: string, country: string) {
     return this.db.list('/visualizacao', ref => ref.orderByChild('ip').equalTo(ip))
       .valueChanges()
       .subscribe(existingRecords => {
@@ -46,7 +46,6 @@ export class Service {
             regiao,
             country,
             data: dataFormatada,
-            idioma,
           };
           return this.db.list('/visualizacao').push(comentarioData);
         } else {

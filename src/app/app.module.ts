@@ -20,6 +20,7 @@ import { GgridComponent } from './projeto/ggrid/ggrid.component';
 import { UsuarioComponent } from './page/usuario/usuario.component';
 import { HomeENComponent } from './en/home-en/home-en.component';
 import { HomeESComponent } from './es/home-es/home-es.component';
+import { CursosComponent } from './page/cursos/cursos.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HomeESComponent } from './es/home-es/home-es.component';
     UsuarioComponent,
     HomeENComponent,
     HomeESComponent,
+    CursosComponent,
   ],
   imports: [
     BrowserModule,

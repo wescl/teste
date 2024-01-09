@@ -7,7 +7,7 @@
     
     <span [@fadeInOut] *ngIf="mensagem === 'nome'" class="erro">
         <span *ngIf="currentUrl === '/'">Esqueceu esse aqui </span> 
-        <span *ngIf="currentUrl === '/en'">Forgot this one </span> 
+        <span *ngIf="currentUrl === '/en'">Forgot this one</span> 
         <span *ngIf="currentUrl === '/es'">Olvidé este </span> 
         <i class="fa-solid fa-chevron-down"></i>
     </span>
@@ -15,6 +15,17 @@
     <input *ngIf="currentUrl === '/'" maxlength="70" [(ngModel)]="nome" placeholder="Seu nome" />
     <input *ngIf="currentUrl === '/en'" maxlength="70" [(ngModel)]="nome" placeholder="Your name" />
     <input *ngIf="currentUrl === '/es'" maxlength="70" [(ngModel)]="nome" placeholder="Su nombre" />
+
+    <span [@fadeInOut] *ngIf="mensagem === 'email'" class="erro">
+        <span *ngIf="currentUrl === '/'">Esqueceu esse aqui </span> 
+        <span *ngIf="currentUrl === '/en'">Forgot this one </span> 
+        <span *ngIf="currentUrl === '/es'">Olvidé este </span> 
+        <i class="fa-solid fa-chevron-down"></i>
+    </span>
+
+    <input type="email" *ngIf="currentUrl === '/'" maxlength="70" [(ngModel)]="email" placeholder="Email" />
+    <input type="email" *ngIf="currentUrl === '/en'" maxlength="70" [(ngModel)]="email" placeholder="Email" />
+    <input type="email" *ngIf="currentUrl === '/es'" maxlength="70" [(ngModel)]="email" placeholder="Email" />
 
     <span [@fadeInOut] *ngIf="mensagem === 'mensagem'" class="erro">
         <span *ngIf="currentUrl === '/'">Esqueceu esse aqui </span> 

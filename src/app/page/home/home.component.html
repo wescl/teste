@@ -5,6 +5,7 @@
             <i mat-button [matMenuTriggerFor]="menu" class="fa-solid fa-bars menu"></i>
             <li (click)="scrollToSobre()">Sobre</li>
             <li (click)="scrollToProjetos()">Projetos</li>
+            <li (click)="scrollToCursos()">Cursos</li>
             <li (click)="scrollToCompetencias()">Conhecimentos</li>
             <li (click)="scrollToContato()">Contato</li>
             <li>ㅤ</li>
@@ -23,12 +24,12 @@
     </mat-menu>
 
     <div style="margin: 100px;"></div>
-    <section class="hidden-left white">
+    <section class="hidden-left">
         <app-perfil></app-perfil>
     </section>
 
     <div style="padding: 100px;" #sobre></div>
-    <section class="hidden-right gray">
+    <section class="hidden-right">
         <app-sobre></app-sobre>
     </section>
 
@@ -37,13 +38,18 @@
         <app-projetos></app-projetos>
     </section>
 
+    <div style="padding: 100px;" #cursos></div>
+    <section class="hidden-left">
+        <app-cursos></app-cursos>
+    </section>
+
     <div style="padding: 100px;" #competencias></div>
-    <section class="hidden-right gray">
+    <section class="hidden-right">
         <app-habilidades></app-habilidades>
     </section>
 
     <div style="padding: 60px;" #contato></div>
-    <section class="hidden-left" style="padding-bottom: 500px;">
+    <section class="hidden-right" style="padding-bottom: 500px;">
         <app-enviar-mensagem [aviso]="aviso" [texto]="texto" (showToastEvent)="toast($event)"></app-enviar-mensagem>
     </section>
 
@@ -51,5 +57,10 @@
         {{ texto }}
     </div>
 </div>
+<!-- Seu conteúdo aqui -->
 
+<div id="fim">
+    <!-- Conteúdo do elemento com ID #fim -->
+  </div>
+  
 <app-usuario></app-usuario>

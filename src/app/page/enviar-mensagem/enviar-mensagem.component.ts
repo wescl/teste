@@ -26,6 +26,7 @@ export class EnviarMensagemComponent {
   carregar: boolean = false;
   nome: string = '';
   comentario: string = '';
+  email: string = '';
 
   @Input() comecoP: string;
   currentUrl: string = "";
@@ -39,11 +40,12 @@ export class EnviarMensagemComponent {
     this.currentUrl = this.router.url;
   }
 
-  adicionarComentario(nome: string, comentario: string) {
+  adicionarComentario(nome: string, comentario: string, email: string) {
     const dataFormatada = new Date().toLocaleString();
     const comentarioData = {
       nome,
       comentario,
+      email,
       data: dataFormatada
     };
     return this.db.list('/comentarios').push(comentarioData);
@@ -52,21 +54,28 @@ export class EnviarMensagemComponent {
   async addComentario() {
     this.mensagem = "";
     this.carregar = true;
-    if (this.nome && this.comentario) {
-      this.adicionarComentario(this.nome, this.comentario)
+    if (this.nome && this.comentario && this.email) {
+      this.adicionarComentario(this.nome, this.comentario, this.email)
       await this.delay(1000)
         .then(() => {
           this.nome = '';
           this.comentario = '';
+          this.email = ''
           this.chamarToastNoPai('mensagem enviada!');
           this.carregar = false;
         })
         .catch(error => console.error('Erro ao adicionar comentário:', error));
       this.carregar = false;
     } else {
-      this.mensagem = "Preencha";
+
       if (this.nome === "") {
         this.mensagem = "nome"
+        this.carregar = false;
+        return
+      }
+
+      if (this.email === "") {
+        this.mensagem = "email"
         this.carregar = false;
         return
       }

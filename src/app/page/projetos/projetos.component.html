@@ -24,8 +24,19 @@
 
 </div>
 
-<div class="aviso" [@fadeInOut] *ngIf="mensagem">
-    <i *ngIf="currentUrl === '/'" class="fa-solid fa-circle-exclamation"><span> Apenas o GGrid, por enquanto.</span></i>
-    <i *ngIf="currentUrl === '/en'" class="fa-solid fa-circle-exclamation"></i><span> {{ aviso }}</span>
-    <i *ngIf="currentUrl === '/es'" class="fa-solid fa-circle-exclamation"></i><span> Sólo GGrid, por ahora.</span>
+<div class="aviso" [@fadeInOut] *ngIf="mensagem && currentUrl === '/'">
+    <i  class="fa-solid fa-circle-exclamation"></i><span> Apenas o GGrid, por enquanto.</span>
 </div>
+
+<div class="aviso" [@fadeInOut] *ngIf="mensagem && currentUrl === '/en'">
+    <i class="fa-solid fa-circle-exclamation"></i><span> {{ aviso }}</span>
+</div>
+
+<div class="aviso" [@fadeInOut] *ngIf="mensagem && currentUrl === '/es'">
+    <i class="fa-solid fa-circle-exclamation"></i><span> Sólo GGrid, por ahora.</span>
+</div>
+
+
+
+
+
