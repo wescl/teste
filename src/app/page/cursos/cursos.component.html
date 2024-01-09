@@ -1,5 +1,7 @@
 <div class="titulo">
-    <h3>Cursos</h3>
+    <h3 *ngIf="currentUrl === '/'">Cursos</h3>
+    <h3 *ngIf="currentUrl === '/en'">Courses</h3>
+    <h3 *ngIf="currentUrl === '/es'">Cursos</h3>
 </div>
 
 <div class="cursos">
@@ -10,17 +12,21 @@
         <p></p>
         <span class="data">05/2022 - 10/2023</span>
         <p></p>
-        <a href="" class="mais">ver mais</a>
+        <a *ngIf="currentUrl === '/'" href="" target="_blank" class="mais">Ver mais</a>
+        <a *ngIf="currentUrl === '/en'" href="" target="_blank" class="mais">View more</a>
+        <a *ngIf="currentUrl === '/es'" href="" target="_blank" class="mais">Ver más</a>
     </div>
 
     <div class="curso hidden-right">
         <img class="imagem" src="https://firebasestorage.googleapis.com/v0/b/portifolio-eeb9f.appspot.com/o/cursos%2Fhashtag.png?alt=media&token=20bc5a3a-7822-4277-ba09-9285a16f3533" alt="Logo Hashtag">
         <h1 class="instituicao">Hashtag Treinamentos</h1>
-        <h2 class="nome">Python</h2>
+        <h2 class="nome">Python Impressionador</h2>
         <p></p>
         <span class="data">09/2022 - 01/2023</span>
         <p></p>
-        <a href="" class="mais">ver mais</a>
+        <a *ngIf="currentUrl === '/'" href="https://www.hashtagtreinamentos.com/curso-python" target="_blank" class="mais">Ver mais</a>
+        <a *ngIf="currentUrl === '/en'" href="https://www.hashtagtreinamentos.com/curso-python" target="_blank" class="mais">View more</a>
+        <a *ngIf="currentUrl === '/es'" href="https://www.hashtagtreinamentos.com/curso-python" target="_blank" class="mais">Ver más</a>
     </div>
 
     <div class="curso hidden-left">
@@ -28,8 +34,10 @@
         <h1 class="instituicao">Udemy - Andre Iacono</h1>
         <h2 class="nome">AWS Solutions Architect Associate SAA-C03</h2>
         <p></p>
-        <span class="data">12/2023 - Andamento</span>
+        <span class="data">12/2023 - <i class="fa-solid fa-spinner"></i></span>
         <p></p>
-        <a href="https://www.udemy.com/course/certificacao-amazon-aws-2019-solutions-architect/" class="mais">ver mais</a>
+        <a *ngIf="currentUrl === '/'" href="https://www.udemy.com/course/certificacao-amazon-aws-2019-solutions-architect/" target="_blank" class="mais">Ver mais</a>
+        <a *ngIf="currentUrl === '/en'" href="https://www.udemy.com/course/certificacao-amazon-aws-2019-solutions-architect/" target="_blank" class="mais">View more</a>
+        <a *ngIf="currentUrl === '/es'" href="https://www.udemy.com/course/certificacao-amazon-aws-2019-solutions-architect/" target="_blank" class="mais">Ver más</a>
     </div>
 </div>

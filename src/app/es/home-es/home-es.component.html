@@ -8,6 +8,7 @@
             <i mat-button [matMenuTriggerFor]="menu" class="fa-solid fa-bars menu"></i>
             <li (click)="scrollToSobre()">Acerca</li>
             <li (click)="scrollToProjetos()">Proyectos</li>
+            <li (click)="scrollToCursos()">Cursos</li>
             <li (click)="scrollToCompetencias()">Conocimiento</li>
             <li (click)="scrollToContato()">Contacto</li>
             <li>ㅤ</li>
@@ -19,6 +20,8 @@
             (click)="scrollToSobre()">Acerca</button>
         <button mat-menu-item style="color: #7b00ff; text-transform: uppercase; font-weight: 500;"
             (click)="scrollToProjetos()">Proyectos</button>
+        <button mat-menu-item style="color: #7b00ff; text-transform: uppercase; font-weight: 500;"
+            (click)="scrollToCursos()">Cursos</button>
         <button mat-menu-item style="color: #7b00ff; text-transform: uppercase; font-weight: 500;"
             (click)="scrollToCompetencias()">Conocimiento</button>
         <button mat-menu-item style="color: #7b00ff; text-transform: uppercase; font-weight: 500;"
@@ -32,33 +35,17 @@
 
     <div style="padding: 100px;" #sobre></div>
     <section class="hidden-right gray">
-        <app-sobre
-        [sobre]="'About me'"
-        [eu]="'who am I'"
-        [euP]="'Hello, I am Wescley, a 20-year-old enthusiast with a deep passion and sometimes a hint of ANGER for programming. From an early 
-        age, I have always been fascinated by building things, dismantling devices, and exploring the possibilities of each 
-        component. With programming, I delved into a vast universe of creativity that I love to explore. My portfolio projects 
-        reflect this mindset, and below you can get to know them better.'"
-
-        [comeco]="'The beginning'"
-        [comecoP]="'My journey into programming began thanks to a technician from my internet 
-        service provider. He came to fix a problem exactly on the day I was assembling my first PC. 
-        Kindly assisting me with the assembly, he shared a bit of what he did in college, simply changing 
-        the color of an element through browser inspection, and my interest was sparked. In 2021, I started
-         my studies with the renowned Gustavo Guanabara. Despite a temporary pause due to work, I resumed in
-          2022 with a technical course in computer science at Senac. This journey has provided me with 
-          significant learnings, participation in group projects, and a continuous dedication to studies.'">
-        </app-sobre>
+        <app-sobre></app-sobre>
     </section>
 
     <div style="padding: 100px;" #projetos></div>
     <section class="hidden-left">
-        <app-projetos
-            [title]="'projects'"
-            [concluido]="'Concluded'"
-            [andamento]="'Progress'"
-            [title]="'projects'"
-        ></app-projetos>
+        <app-projetos></app-projetos>
+    </section>
+
+    <div style="padding: 100px;" #cursos></div>
+    <section class="hidden-left">
+        <app-cursos></app-cursos>
     </section>
 
     <div style="padding: 100px;" #competencias></div>

@@ -3,7 +3,6 @@ import { Observable, tap } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Injectable, NgZone, RendererFactory2, Renderer2 } from '@angular/core';
 import { Colecao } from './colecao';
-import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +16,6 @@ export class Service {
     private http: HttpClient,
     private db: AngularFireDatabase,
     private rendererFactory: RendererFactory2, private ngZone: NgZone,
-    private location: Location,
   ) {
     this.renderer = this.rendererFactory.createRenderer(null, null);
   }
@@ -75,8 +73,7 @@ export class Service {
     });
   }
 
-  reloadPage(): void {
-    this.location.go(this.location.path());
-    window.location.reload();
+  downloadPDF(pdfUrl: string): Observable<Blob> {
+    return this.http.get(pdfUrl, { responseType: 'blob' });
   }
 }

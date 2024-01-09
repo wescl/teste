@@ -1,5 +1,5 @@
-$outline-width: 5px;
-$shadow-width: 5px;
+$outline-width: 3px;
+$shadow-width: 3px;
 $primary-color: #7b00ff;
 $button-background: #7b00ff;
 $sec-button-background: #7b1de0;
@@ -221,10 +221,12 @@ $shadow-color: #570ba9;
     .eightbit {
         width: 320px;
         transition: 1s;
-        padding: 15px;
+        padding: 15px 30px;
 
         h3 {
-            font-size: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
             margin: 15px 0 20px 0;
         }
 
@@ -232,11 +234,14 @@ $shadow-color: #570ba9;
             width: 100%;
             max-height: 430px;
             min-height: 100px;
-            padding: 8px;
+            border-radius: 3px;
+            font-size: 13px;
         }
 
         input {
-            padding: 9px;
+            padding: 8px;
+            border-radius: 3px;
+            font-size: 13px;
         }
 
         p {
@@ -258,7 +263,9 @@ $shadow-color: #570ba9;
     }
 
     .eightbit-btn {
+        font-size: 10px;
         padding: 10px;
+        width: 40%;
         margin: 20px 0;
     }
 

@@ -22,7 +22,7 @@ export class SobreComponent implements OnInit {
   currentUrl: string = "";
 
   isPanelOpen: PanelStatus = {
-    panel1: true,
+    panel1: false,
     panel2: false
   };
 

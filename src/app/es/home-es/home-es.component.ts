@@ -48,6 +48,7 @@ export class HomeESComponent {
   @ViewChild('projetos') projetos!: ElementRef;
   @ViewChild('sobre') sobre!: ElementRef;
   @ViewChild('contato') contato!: ElementRef;
+  @ViewChild('cursos') cursos!: ElementRef;
 
   scrollToCompetencias() {
     this.competencias.nativeElement.scrollIntoView({ behavior: 'smooth' });
@@ -63,6 +64,10 @@ export class HomeESComponent {
 
   scrollToContato() {
     this.contato.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  scrollToCursos() {
+    this.cursos.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 
   scrollTop() {

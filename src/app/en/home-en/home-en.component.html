@@ -8,6 +8,7 @@
             <i mat-button [matMenuTriggerFor]="menu" class="fa-solid fa-bars menu"></i>
             <li (click)="scrollToSobre()">about</li>
             <li (click)="scrollToProjetos()">projects</li>
+            <li (click)="scrollToCursos()">Courses</li>
             <li (click)="scrollToCompetencias()">knowledge</li>
             <li (click)="scrollToContato()">Contact</li>
             <li>ㅤ</li>
@@ -19,6 +20,8 @@
             (click)="scrollToSobre()">About</button>
         <button mat-menu-item style="color: #7b00ff; text-transform: uppercase; font-weight: 500;"
             (click)="scrollToProjetos()">Projects</button>
+        <button mat-menu-item style="color: #7b00ff; text-transform: uppercase; font-weight: 500;"
+            (click)="scrollToCursos()">Courses</button>
         <button mat-menu-item style="color: #7b00ff; text-transform: uppercase; font-weight: 500;"
             (click)="scrollToCompetencias()">knowledge</button>
         <button mat-menu-item style="color: #7b00ff; text-transform: uppercase; font-weight: 500;"
@@ -59,6 +62,11 @@
             [andamento]="'Progress'"
             [title]="'projects'"
         ></app-projetos>
+    </section>
+
+    <div style="padding: 100px;" #cursos></div>
+    <section class="hidden-left">
+        <app-cursos></app-cursos>
     </section>
 
     <div style="padding: 100px;" #competencias></div>
