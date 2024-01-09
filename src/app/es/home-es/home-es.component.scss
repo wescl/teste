@@ -18,6 +18,21 @@ $primary-color: #7b00ff;
     overflow: hidden;
 }
 
+.teste {
+    background-image: url('/assets/fundo.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    opacity: 2%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
 .menu {
     display: none;
 }

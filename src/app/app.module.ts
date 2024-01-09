@@ -17,6 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CarrosselComponent } from './carrossel/carrossel.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { GgridComponent } from './projeto/ggrid/ggrid.component';
+import { UsuarioComponent } from './page/usuario/usuario.component';
+import { HomeENComponent } from './en/home-en/home-en.component';
+import { HomeESComponent } from './es/home-es/home-es.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { GgridComponent } from './projeto/ggrid/ggrid.component';
     SobreComponent,
     CarrosselComponent,
     GgridComponent,
+    UsuarioComponent,
+    HomeENComponent,
+    HomeESComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,7 @@ import { GgridComponent } from './projeto/ggrid/ggrid.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule, BrowserAnimationsModule,
     HttpClientModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

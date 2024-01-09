@@ -1,26 +1,48 @@
 <div class="eightbit">
 
 
-    <h3>Enviar Mensagem</h3>
+    <h3 *ngIf="currentUrl === '/'">Enviar Mensagem</h3>
+    <h3 *ngIf="currentUrl === '/en'">send Message</h3>
+    <h3 *ngIf="currentUrl === '/es'">enviar mensaje</h3>
+    
+    <span [@fadeInOut] *ngIf="mensagem === 'nome'" class="erro">
+        <span *ngIf="currentUrl === '/'">Esqueceu esse aqui </span> 
+        <span *ngIf="currentUrl === '/en'">Forgot this one </span> 
+        <span *ngIf="currentUrl === '/es'">Olvidé este </span> 
+        <i class="fa-solid fa-chevron-down"></i>
+    </span>
 
-    <span [@fadeInOut] *ngIf="mensagem === 'nome'" class="erro">Esqueceu esse aqui <i
-            class="fa-solid fa-chevron-down"></i></span>
-    <input maxlength="70" [(ngModel)]="nome" placeholder="Seu nome" />
+    <input *ngIf="currentUrl === '/'" maxlength="70" [(ngModel)]="nome" placeholder="Seu nome" />
+    <input *ngIf="currentUrl === '/en'" maxlength="70" [(ngModel)]="nome" placeholder="Your name" />
+    <input *ngIf="currentUrl === '/es'" maxlength="70" [(ngModel)]="nome" placeholder="Su nombre" />
 
-    <span [@fadeInOut] *ngIf="mensagem === 'mensagem'" class="erro">Esqueceu esse aqui <i
-            class="fa-solid fa-chevron-down"></i></span>
-    <textarea [(ngModel)]="comentario" placeholder="Sua mensagem" maxlength="5000"></textarea>
+    <span [@fadeInOut] *ngIf="mensagem === 'mensagem'" class="erro">
+        <span *ngIf="currentUrl === '/'">Esqueceu esse aqui </span> 
+        <span *ngIf="currentUrl === '/en'">Forgot this one </span> 
+        <span *ngIf="currentUrl === '/es'">Olvidé este </span>  
+        <i class="fa-solid fa-chevron-down"></i></span>
+
+    <textarea *ngIf="currentUrl === '/'" [(ngModel)]="comentario" placeholder="Sua mensagem" maxlength="5000"></textarea>
+    <textarea *ngIf="currentUrl === '/en'" [(ngModel)]="comentario" placeholder="Your message" maxlength="5000"></textarea>
+    <textarea *ngIf="currentUrl === '/es'" [(ngModel)]="comentario" placeholder="Su mensaje" maxlength="5000"></textarea>
+
     <div class="contador">
         <span>{{ comentario.length }} / 5000</span>
     </div>
-    <a (click)="addComentario()" *ngIf="!carregar" class="eightbit-btn">Enviar</a>
+
+    <a (click)="addComentario()"  *ngIf="!carregar && currentUrl === '/'" class="eightbit-btn">Enviar</a>
+    <a (click)="addComentario()"  *ngIf="!carregar && currentUrl === '/en'" class="eightbit-btn">Send</a>
+    <a (click)="addComentario()"  *ngIf="!carregar && currentUrl === '/es'" class="eightbit-btn">Mandar</a>
+
     <a (click)="addComentario()" *ngIf="carregar" class="eightbit-btn">ㅤ<span class="loader"></span>ㅤ</a>
-    <p>ou</p>
+
+    <p *ngIf="currentUrl === '/'">ou</p>
+    <p *ngIf="currentUrl === '/en'">or</p>
+    <p *ngIf="currentUrl === '/es'">o</p>
+
     <div class="icon-contato">
         <a target="_blank" href="https://wa.me/qr/CZRDQ6OUDU6TL1"><i class="fa-brands fa-whatsapp"></i></a>
         <a target="_blank" href="mailto:wescleyasr@gmail.com"><i class="fa-regular fa-envelope"></i></a>
         <a target="_blank" href="https://www.linkedin.com/in/zwescley/"><i class="fa-brands fa-linkedin"></i></a>
     </div>
 </div>
-
-

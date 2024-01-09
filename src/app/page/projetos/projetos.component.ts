@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -20,9 +20,19 @@ import { Router } from '@angular/router';
 })
 export class ProjetosComponent {
 
+  @Input() title: string;
+  @Input() concluido: string;
+  @Input() andamento: string;
+  @Input() aviso: string;
+
   mensagem: boolean = false;
+  currentUrl: string = "";
 
   constructor(private router: Router) { }
+
+  ngOnInit(): void {
+    this.currentUrl = this.router.url;
+  }
 
   irGGrid() {
     this.router.navigate(['/ggrid'], {

@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Injectable, NgZone, RendererFactory2, Renderer2 } from '@angular/core';
+import { Colecao } from './colecao';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -9,20 +11,30 @@ import { Injectable, NgZone, RendererFactory2, Renderer2 } from '@angular/core';
 export class Service {
 
   private renderer: Renderer2;
-  
+  private ipAtual: string = "";
+
   constructor(
     private http: HttpClient,
     private db: AngularFireDatabase,
-    private rendererFactory: RendererFactory2, private ngZone: NgZone
+    private rendererFactory: RendererFactory2, private ngZone: NgZone,
+    private location: Location,
   ) {
     this.renderer = this.rendererFactory.createRenderer(null, null);
   }
 
-  getIpAddress(): Observable<any> {
-    return this.http.get('https://ipapi.co/json/');
+  getIpAddress(): Observable<Colecao> {
+    return this.http.get<Colecao>('https://ipapi.co/json/').pipe(
+      tap(data => {
+        this.ipAtual = data.ip;
+      })
+    );
   }
 
-  adicionarIp(ip: string, city: string, regiao: string, country: string) {
+  getIpAtual(): string {
+    return this.ipAtual;
+  }
+
+  adicionarIp(ip: string, city: string, regiao: string, country: string, idioma: string) {
     return this.db.list('/visualizacao', ref => ref.orderByChild('ip').equalTo(ip))
       .valueChanges()
       .subscribe(existingRecords => {
@@ -33,7 +45,8 @@ export class Service {
             city,
             regiao,
             country,
-            data: dataFormatada
+            data: dataFormatada,
+            idioma,
           };
           return this.db.list('/visualizacao').push(comentarioData);
         } else {
@@ -41,7 +54,7 @@ export class Service {
         }
       });
   }
-
+  
   observeIntersection(elements: NodeListOf<HTMLElement>, classToShow: string, classToHide: string): void {
     const observer = new IntersectionObserver((entries) => {
       this.ngZone.run(() => {
@@ -49,6 +62,7 @@ export class Service {
           if (entry.isIntersecting) {
             this.renderer.addClass(entry.target, classToShow);
             this.renderer.removeClass(entry.target, classToHide);
+            observer.unobserve(entry.target);
           } else {
             this.renderer.addClass(entry.target, classToHide);
             this.renderer.removeClass(entry.target, classToShow);
@@ -60,5 +74,10 @@ export class Service {
     elements.forEach((element) => {
       observer.observe(element);
     });
+  }
+
+  reloadPage(): void {
+    this.location.go(this.location.path());
+    window.location.reload();
   }
 }

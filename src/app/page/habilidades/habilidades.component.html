@@ -1,10 +1,19 @@
 <div class="titulo">
-    <h3>Conhecimentos</h3>
+    <h3 *ngIf="currentUrl === '/'">Conhecimentos</h3>
+    <h3 *ngIf="currentUrl === '/en'">skills</h3>
+    <h3 *ngIf="currentUrl === '/es'">Conocimiento</h3>
 </div>
+
+<!-- <div class="item-container">
+    <div *ngFor="let item of itens" class="item hidden-right" (mouseenter)="mostrarTexto(item)" (mouseleave)="esconderTexto()">
+        <img [src]="item.imagem" alt="{{ item.nome }}">
+        <span [@fadeInOut] *ngIf="item.mostrar">{{ item.nome }}</span>
+    </div>
+</div> -->
 
 <div class="item-container">
     <div *ngFor="let item of itens" class="item hidden-right" (mouseenter)="mostrarTexto(item)" (mouseleave)="esconderTexto()">
         <img [src]="item.imagem" alt="{{ item.nome }}">
-        <span [@fadeInOut] *ngIf="item.mostrar">{{ item.nome }}</span>
+        <span>{{ item.nome }}</span>
     </div>
 </div>

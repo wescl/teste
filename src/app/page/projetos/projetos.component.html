@@ -1,5 +1,7 @@
 <div class="titulo">
-    <h3>Projetos</h3>
+    <h3 *ngIf="currentUrl === '/'">Projetos</h3>
+    <h3 *ngIf="currentUrl === '/en'">{{ title }}</h3>
+    <h3 *ngIf="currentUrl === '/es'">Proyectos</h3>
 </div>
 
 <div class="projetos">
@@ -7,17 +9,23 @@
         <img src="https://firebasestorage.googleapis.com/v0/b/portifolio-eeb9f.appspot.com/o/projeto%2F2logo-x.png?alt=media&token=60dc1984-1d0c-4693-986e-ea6f551d0dfb"
             alt="">
         <span class="nome-projeto">GGrid</span>
-        <span class="status-concluido"><i class="fa-solid fa-circle-check"></i> Concluído</span>
+        <span *ngIf="currentUrl === '/'" class="status-concluido"><i class="fa-solid fa-circle-check"></i> Concluído</span>
+        <span *ngIf="currentUrl === '/en'" class="status-concluido"><i class="fa-solid fa-circle-check"></i> {{ concluido }}</span>
+        <span *ngIf="currentUrl === '/es'" class="status-concluido"><i class="fa-solid fa-circle-check"></i> Concluyó</span>
     </div>
 
     <div class="projeto hidden-left" (click)="botao()">
         <img src="https://firebasestorage.googleapis.com/v0/b/portifolio-eeb9f.appspot.com/o/projeto-joystest%2Flogo-joytest.png?alt=media&token=6a6513fd-8788-4ca5-b4e8-7fda5622ebac" alt="">
         <span class="nome-projeto">JoyTest</span>
-        <span class="status-andamento"><i class="fa-solid fa-spinner"></i> Andamento</span>
+        <span *ngIf="currentUrl === '/'" class="status-andamento"><i class="fa-solid fa-spinner"></i> Andamento</span>
+        <span *ngIf="currentUrl === '/en'" class="status-andamento"><i class="fa-solid fa-spinner"></i> {{ andamento }}</span>
+        <span *ngIf="currentUrl === '/es'" class="status-andamento"><i class="fa-solid fa-spinner"></i> Progreso</span>
     </div>
 
 </div>
 
 <div class="aviso" [@fadeInOut] *ngIf="mensagem">
-    <i class="fa-solid fa-circle-exclamation"></i><span> Apenas o GGrid, por enquanto.</span>
+    <i *ngIf="currentUrl === '/'" class="fa-solid fa-circle-exclamation"><span> Apenas o GGrid, por enquanto.</span></i>
+    <i *ngIf="currentUrl === '/en'" class="fa-solid fa-circle-exclamation"></i><span> {{ aviso }}</span>
+    <i *ngIf="currentUrl === '/es'" class="fa-solid fa-circle-exclamation"></i><span> Sólo GGrid, por ahora.</span>
 </div>

@@ -1,44 +1,99 @@
 <div class="titulo">
     <div>
-        <h3>Sobre Mim</h3>
+
+        <h3  *ngIf="currentUrl === '/'">Sobre Mim</h3>
+        <h3 *ngIf="currentUrl === '/en'">{{ sobre }}</h3>
+        <h3 *ngIf="currentUrl === '/es'">Sobre Mi</h3>
     </div>
 </div>
 
 <div class="row">
+
     <div class="col hidden-left" style="transition-delay: 500ms;">
+        <img src="/assets/ilu1.png" style="width: 90%; border-radius: 20px; opacity: 90%" alt="">
+    </div>
+    <div class="col hidden-right">
+        <p style="margin: 60px;"></p>
         <div class="expansion-panel">
             <div class="panel-header" (click)="togglePanel('panel1')">
-                <h3>Quem Sou Eu</h3>
+
+                <h3 *ngIf="currentUrl === '/'">Quem Sou Eu</h3>
+                <h3 *ngIf="currentUrl === '/en'">{{ eu }}</h3>
+                <h3 *ngIf="currentUrl === '/es'">Quien Soy Yo</h3>
+
                 <div class="icon" #icon1>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
             </div>
             <div class="panel-content" [ngClass]="{'open': isPanelOpen['panel1']}">
-                <p>Olá, eu sou Wescley, um entusiasta de 20 anos com uma paixão profunda e, às vezes, uma pitada de <span
-                        style="color: red; font-size: 18px;"><strong>RAIVA</strong></span> pela programação. Desde cedo,
+
+                <p *ngIf="currentUrl === '/'">
+                    Olá, eu sou Wescley, um entusiasta de 20 anos com uma paixão profunda e, às vezes, uma pitada de
+                    <span style="color: red; font-size: 18px;"><strong>RAIVA</strong></span> pela programação. Desde
+                    cedo,
                     sempre fui fascinado por construir coisas, desmontar dispositivos e explorar as possibilidades de
-                    cada peça. Com a programação, mergulhei em um vasto universo de criatividade que adoro explorar. Meus
-                    projetos no portfólio são um reflexo desse pensamento, e abaixo você pode conhecê-los melhor.</p>
+                    cada peça. Com a programação, mergulhei em um vasto universo de criatividade que adoro explorar.
+                    Meus
+                    projetos no portfólio são um reflexo desse pensamento, e abaixo você pode conhecê-los melhor.
+                </p>
+
+                <p *ngIf="currentUrl === '/en'">
+                    {{ euP }}
+                </p>
+
+                <p *ngIf="currentUrl === '/es'">
+                    Hola, soy Wescley, un entusiasta de 20 años con una profunda pasión y, a veces, una pizca de
+                    <span style="color: red; font-size: 18px;"><strong>ENFADO</strong></span> por la programación. Desde
+                    temprana edad, siempre me ha fascinado construir cosas, desmontar dispositivos y explorar las
+                    posibilidades de cada pieza. Con la programación, me sumergí en un vasto universo de creatividad que
+                    me encanta explorar. Mis proyectos en el portafolio son un reflejo de este pensamiento, y a
+                    continuación puedes conocerlos mejor.
+                </p>
+
             </div>
         </div>
-    </div>
-    <div class="col hidden-right">
+
         <div class="expansion-panel">
             <div class="panel-header" (click)="togglePanel('panel2')">
-                <h3>O Começo</h3>
+
+                <h3 *ngIf="currentUrl === '/'">O Começo</h3>
+                <h3 *ngIf="currentUrl === '/en'">{{ comeco }}</h3>
+                <h3 *ngIf="currentUrl === '/es'">El Comienzo</h3>
+
                 <div class="icon" #icon2>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
             </div>
             <div class="panel-content" [ngClass]="{'open': isPanelOpen['panel2']}">
-                <p>Minha jornada na programação começou graças a um técnico da minha provedora de internet. Ele veio
-                    resolver um problema exatamente no dia em que eu estava montando meu primeiro PC. Gentilmente me ajudou a montar, ele
-                    compartilhou um pouco do que fazia na faculdade, simplesmente alterando a cor de um elemento através da inspeção
+
+                <p *ngIf="currentUrl === '/'">
+                    Minha jornada na programação começou graças a um técnico da minha provedora de internet. Ele veio
+                    resolver um problema exatamente no dia em que eu estava montando meu primeiro PC. Gentilmente me
+                    ajudou a montar, ele
+                    compartilhou um pouco do que fazia na faculdade, simplesmente alterando a cor de um elemento através
+                    da inspeção
                     do navegador, e meu interesse foi despertado. Em 2021, iniciei meus estudos com o
                     renomado Gustavo Guanabara. Apesar de uma pausa temporária devido ao trabalho, retomei em 2022 com
                     um curso técnico em informática no <a target="_blank"
                         href="https://tisenac.netlify.app/#dt27">Senac</a>. Essa jornada me proporcionou aprendizados
-                    significativos, participação em projetos em grupo e uma dedicação contínua aos estudos.</p>
+                    significativos, participação em projetos em grupo e uma dedicação contínua aos estudos.
+                </p>
+
+                <p *ngIf="currentUrl === '/en'">
+                    {{ comecoP }}
+                </p>
+
+                <p *ngIf="currentUrl === '/es'">
+                    Mi viaje en la programación comenzó gracias a un técnico de mi proveedor de Internet. Vino a
+                    resolver un problema justo el día en que estaba armando mi primera PC. Amablemente me ayudó a
+                    armarla y compartió un poco de lo que hacía en la universidad, simplemente cambiando el color de un
+                    elemento a través de la inspección del navegador, y despertó mi interés. En 2021, inicié mis
+                    estudios con el renombrado Gustavo Guanabara. A pesar de una pausa temporal debido al trabajo,
+                    retomé en 2022 con un curso técnico en informática en el <a target="_blank"
+                        href="https://tisenac.netlify.app/#dt27">Senac</a>. Este viaje me proporcionó aprendizajes
+                    significativos, participación en proyectos grupales y una dedicación continua a los estudios.
+                </p>
+
             </div>
         </div>
     </div>

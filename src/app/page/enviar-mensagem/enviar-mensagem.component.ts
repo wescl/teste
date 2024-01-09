@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-enviar-mensagem',
@@ -26,9 +27,17 @@ export class EnviarMensagemComponent {
   nome: string = '';
   comentario: string = '';
 
+  @Input() comecoP: string;
+  currentUrl: string = "";
+
   constructor(
     private db: AngularFireDatabase,
+    private router: Router
   ) { }
+
+  ngOnInit(): void {
+    this.currentUrl = this.router.url;
+  }
 
   adicionarComentario(nome: string, comentario: string) {
     const dataFormatada = new Date().toLocaleString();

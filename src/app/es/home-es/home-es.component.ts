@@ -3,9 +3,9 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { Service } from 'src/app/model/service.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-home-es',
+  templateUrl: './home-es.component.html',
+  styleUrls: ['./home-es.component.scss'],
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [
@@ -15,12 +15,10 @@ import { Service } from 'src/app/model/service.service';
       transition(':leave', [
         animate('.1s ease-in-out', style({ opacity: 0 })),
       ]),
-    ]),
+    ])
   ],
 })
-
-export class HomeComponent implements AfterViewInit, OnInit {
-
+export class HomeESComponent {
   @Output() scrollEvent = new EventEmitter<void>();
   aviso: boolean = false;
   texto: string = "";
@@ -81,5 +79,5 @@ export class HomeComponent implements AfterViewInit, OnInit {
   async delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
-
 }
+
