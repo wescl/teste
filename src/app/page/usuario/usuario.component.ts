@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Service } from 'src/app/model/service.service';
 
 @Component({
@@ -9,9 +10,11 @@ import { Service } from 'src/app/model/service.service';
 export class UsuarioComponent {
 
   visualizacao: any[] = [];
+  menu:boolean = false;
 
   constructor(
     private service: Service,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -39,4 +42,17 @@ export class UsuarioComponent {
       window.URL.revokeObjectURL(url);
     });
   }
+
+  irEn() {
+    this.router.navigate(['/en']);
+  }
+
+  irEs() {
+    this.router.navigate(['/es']);
+  }
+
+  exibirMenu(){
+    this.menu = !this.menu
+  }
+
 }

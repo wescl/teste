@@ -35,9 +35,7 @@ export class ProjetosComponent {
   }
 
   irGGrid() {
-    this.router.navigate(['/ggrid'], {
-      state: { animation: 'ggrid' }
-    });
+    this.router.navigate(['/ggrid']);
   }
 
   async botao(){
