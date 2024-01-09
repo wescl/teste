@@ -5,3 +5,12 @@
     </button>
 </div>
 
+<div class="idiomas" [class.menu-ativo]="menu" [@fadeInOut]>
+  <div  [@fadeInOut] (click)="exibirMenu()" [class.menu-ativo]="menu" *ngIf="currentUrl === '/'">PT<i class="fa-solid fa-chevron-down"></i></div>
+  <div  [@fadeInOut] (click)="exibirMenu()" [class.menu-ativo]="menu" *ngIf="currentUrl != '/'">{{ currentUrl }}<i class="fa-solid fa-chevron-down"></i></div>
+  <ul  [@fadeInOut] [class.menu-ativo]="menu" *ngIf="menu">
+    <li (click)="irPt()" *ngIf="currentUrl != '/'">PT</li>
+    <li (click)="irEn()" *ngIf="currentUrl != 'en'">EN</li>
+    <li (click)="irEs()" *ngIf="currentUrl != 'es'">ES</li>
+  </ul>
+</div>

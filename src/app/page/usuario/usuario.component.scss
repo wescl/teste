@@ -14,7 +14,7 @@
     width: 45px;
     border-radius: 100%;
     font-weight: 800;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, .55) 0px 5px 15px;
     opacity: 40%;
     transition: all .5s;
 
@@ -56,20 +56,61 @@
 }
 
 .idiomas {
-  width: 200px;
+  position: fixed;
+  top: 140px;
+  left: 15px;
+  z-index: 1000;
 
-  span {
+  div {
     cursor: pointer;
+    transition: all .5s;
+
+    i {
+      transform: rotate(0deg);
+      transition: all .5s;
+      margin-left: 12px;
+    }
   }
 
   ul {
-    background-color: red;
-    list-style-type: none;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
     text-align: center;
+    align-items: center;
+
+    li {
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color .5s ease-in-out;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
   }
 
-  li {
-    list-style-type: none;
-    text-align: center;
+  &.menu-ativo {
+    ul {
+      opacity: 1;
+    }
+
+    div {
+      color: #7b00ff;
+
+      i {
+        transition: all .5s;
+        transform: rotate(180deg);
+      }
+    }
   }
 }

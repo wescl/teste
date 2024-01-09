@@ -1,16 +1,30 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Service } from 'src/app/model/service.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
-  styleUrls: ['./usuario.component.scss']
+  styleUrls: ['./usuario.component.scss'],
+  animations: [
+    trigger('fadeInOut', [
+      state('in', style({ opacity: 1 })),
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate(300) // ajuste a duração conforme necessário
+      ]),
+      transition('* => void', [
+        animate(300, style({ opacity: 0 })) // ajuste a duração conforme necessário
+      ])
+    ])
+  ]
 })
 export class UsuarioComponent {
 
   visualizacao: any[] = [];
   menu:boolean = false;
+  currentUrl = "";
 
   constructor(
     private service: Service,
@@ -19,7 +33,10 @@ export class UsuarioComponent {
 
   ngOnInit(): void {
     this.getIpAddress();
+    this.currentUrl = this.router.url.slice(-2);
+    console.log("testando current " + this.currentUrl);
   }
+  
 
   getIpAddress(): void {
     this.service.getIpAddress().subscribe((data) => {
@@ -41,6 +58,10 @@ export class UsuarioComponent {
       document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
     });
+  }
+
+  irPt() {
+    this.router.navigate(['/']);
   }
 
   irEn() {
